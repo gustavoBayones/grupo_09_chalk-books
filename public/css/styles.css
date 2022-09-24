@@ -13,22 +13,29 @@
 .nav-bar-header{
     background-color: #d9cfde;
     display:flex;
+    flex-direction: row;
     height: 90px;
     padding: 5px 10%;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 } 
 .burger-menu{
-    font-size: 30px;
-    margin: 5%;
-    padding: 5%;
-    align-items: flex-start;
+    align-self: flex-start;
+}
+
+
+.header .logo img{
+    height: 75px;
+    border-radius: 50%;
+    transition: all 0.3ms;
+}
+.header .nav-tools ul {
+    list-style: none;
+    flex-direction: row;
     display: flex;
-    text-align: left;
+}
+.header .nav-tools ul li{
+    justify-content: space-between;
 }
 
-
-.logo {
-    display: none;
-}
 
