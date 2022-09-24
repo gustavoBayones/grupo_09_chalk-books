@@ -14,7 +14,6 @@
     background-color: #d9cfde;
     display:flex;
     height: 90px;
-<<<<<<< HEAD
     padding: 5px 10%;
     width: 100%;
     justify-content: space-around;
@@ -33,28 +32,3 @@
     display: none;
 }
 
-=======
-    padding: 0;
-}
-
-.buscar {
-    width: 20%;
-}
-
-.nav-bar {
-    visibility: hidden;
-}
-
-.nav-tools ul {
-    list-style: none;
-    display: flex;
-    width: 50%;
-    }
-
-.nav-tools ul li a {
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    align-items: flex-start;
-}    
->>>>>>> 00cddac5cd877c1a6095e248955e76db3cb89e5c
