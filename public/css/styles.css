@@ -10,32 +10,80 @@
     background-color: #e7e4f1;
 }
 **/
-.nav-bar-header{
-    background-color: #d9cfde;
+.nav-bar-header {
+    background-color: #c793e0;
     display:flex;
     flex-direction: row;
     height: 90px;
     padding: 5px 10%;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 } 
-.burger-menu{
-    align-self: flex-start;
+
+.burger-menu {
+    align-self: center;
+    width: 30%;
 }
 
-
-.header .logo img{
-    height: 75px;
+.header .logo img {
+    height: 65px;
     border-radius: 50%;
-    transition: all 0.3ms;
+    margin-top: 10px;
 }
+
 .header .nav-tools ul {
     list-style: none;
     flex-direction: row;
     display: flex;
 }
-.header .nav-tools ul li{
+
+.header .nav-tools ul li {
     justify-content: space-between;
+    padding: 15px;
+    width: 30%
 }
 
+.buscar {
+    background-color: #c793e0;
+    text-align: center;
+}
 
+.buscar i {
+    background-color: white;
+    margin: -30px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    background-color: #d5c0dd;
+}
+
+main {
+    background-color: aquamarine;
+    height: 95px;
+    width: 100%;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95px;
+    background-color: antiquewhite;
+}
+
+footer div ul li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.lista {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
