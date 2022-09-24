@@ -1,0 +1,23 @@
+{
+  "name": "grupo_09_chalk-books",
+  "version": "1.0.0",
+  "description": "Sprint 1 grupo 9",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",	
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavoBayones/grupo_09_chalk-books.git"
+  },
+  "author": "Aldo Varela, Lautaro Parandelli, Magali Nieva, Lucas Bustos, Gustavo Bayones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavoBayones/grupo_09_chalk-books/issues"
+  },
+  "homepage": "https://github.com/gustavoBayones/grupo_09_chalk-books#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
