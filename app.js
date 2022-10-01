@@ -15,3 +15,7 @@ app.listen(3030, ()=>{
 app.get ('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
+
+app.get ('/register', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/registro.html'));
+})

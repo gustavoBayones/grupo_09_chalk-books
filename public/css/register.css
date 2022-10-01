@@ -1,0 +1,91 @@
+.titulo {
+background-color: black;
+color: white;
+font-family: 'Dancing Script', cursive;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.titulo p{
+    margin:auto;
+}
+
+main {
+    height: 100vh;
+    background-image: url(/images/background-login.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+}
+
+.form-padre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.13);
+    flex-direction: column;
+    border-radius: 10px;
+    width: 80vw;
+    border: 1px solid grey;
+    margin:auto;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.formulario input {
+    margin: 10px;
+}
+
+.legals {
+    font-size: 10px;
+    color: white;
+}
+
+.login {
+    margin-bottom: 5px;
+}
+
+.login a{
+    color: white;
+    text-decoration: none;
+
+}
+
+.login a:visited {
+    color: whitespace;
+}
+
+.input-texts {
+    font-family:"Fira Sans", serif;
+    font-style: italic;
+    background-color: rgba(54, 54, 54, 0.5);
+    border: 1px solid grey;
+    color: white;
+}
+
+.boton {
+    background-color: rgba(54, 54, 54, 0.9);
+    color: white;
+    font-family:"Fira Sans", serif;
+    font-style: italic;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;;
+    border-radius: 24px;
+    border-style: none;
+}
+
+.boton:hover {
+    background-color: rgb(37, 37, 37);
+}
+
+.link-term {
+    color:aliceblue;
+}
