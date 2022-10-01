@@ -91,35 +91,38 @@ footer div ul li {
     list-style: none;
 }
 
+footer div ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    padding: 2%;
+}
+
+footer h2 {
+    font-size: 20px;
+}
+
 .lista {
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
-    padding:3%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
 }
 
-.lista .sobre-nosotros {
-        width: 25%;
-}
-
-.ayuda {
-        width: 25%;
+.sobre-nosotros, .ayuda, .medios, .contacto {
+    padding: 3%;
 }
 
 .redes {
-    width: 90%;
-    height:80%;
+        height:80%;
 }
 
 .pagos {
-    width: 90%;
-    height: 90%;
+     width: 100%;
+     height: 110px;
+     padding: 1%;
 }
 
-.lista .medios {
-      width: 25%;
-}
-
-.lista .contacto {
-    width: 25%;
+.legales p {
+    font-size: 10px;
 }
