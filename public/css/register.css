@@ -27,7 +27,6 @@ main {
     background-color: rgba(0,0,0,0.13);
     flex-direction: column;
     border-radius: 10px;
-    width: 80vw;
     border: 1px solid grey;
     margin:auto;
 }
@@ -88,4 +87,8 @@ main {
 
 .link-term {
     color:aliceblue;
+}
+
+@media (min-width: 768px) {
+
 }
