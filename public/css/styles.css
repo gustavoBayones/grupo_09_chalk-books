@@ -7,9 +7,11 @@
     font-size: 20px;
 }
 body {
-        background-image: url(/images/background-login.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+    background-image: url("/images/background-img.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
 }
 
 
@@ -85,11 +87,27 @@ body {
 .nav-bar a{
     color: white;
     text-decoration: none;
+    font-size: 17px;
+}
+
+
+.nav-bar li {
+    width: 25%;
+    text-align: center;
+    border: 1px solid white;
 }
 
 main {
     background-color: whitesmoke;
     width: 100%;
+}
+
+main h2 {
+    margin: 5px 0 5px 5px;
+}
+
+main h3 {
+  margin: 5px 0 5px 5px;
 }
 
 .banner {
@@ -128,11 +146,12 @@ section article {
     margin: auto;
     border-radius: 20px;
     border: 1px solid grey;
-    width: 30vh;
+    width: 45vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 170px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 h4 {
@@ -141,6 +160,34 @@ h4 {
     width: 100%;
     text-align: center;
     padding-top: 5px;
+}
+
+.top10 {
+width: 100%;
+box-shadow: none;
+border-radius: 0;
+border: 0px;
+border-top: 1px dotted grey;
+align-items: flex-start;
+height: auto;
+flex-direction: row;
+font-size: 16px;
+}
+
+.top10-padre {
+ margin-left: 5px;
+ margin-right: 5px;
+}
+
+.top10 a {
+    text-decoration: none;
+    color: rgb(105, 105, 187);
+    font-size: 16px;
+}
+
+.descripcion-top10 {
+    font-size: 12px;
+    display: none;
 }
 
 footer {
@@ -193,4 +240,24 @@ footer h2 {
 
 .legales p {
     font-size: 10px;
+}
+
+@media (min-width: 700px) {
+
+.productos-padre {
+    display: flex;
+    justify-content: space-between;
+}
+.products {
+    justify-content: space-between;
+    width: 50vw;
+}
+
+section article {
+    width: 22vw;
+}
+
+.descripcion-top10 {
+    display: block;
+}
 }

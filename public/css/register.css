@@ -14,9 +14,11 @@ align-items: center;
 
 main {
     height: 100vh;
-    background-image: url(/images/background-login.jpg);
+    background-image: url("/images/background-img.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
     display: flex;
 }
 
