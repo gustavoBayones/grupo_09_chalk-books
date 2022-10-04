@@ -6,12 +6,16 @@
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
-/** body{
-    background-color: #e7e4f1;
+body {
+        background-image: url(/images/background-login.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 }
-**/
+
+
+
 .nav-bar-header {
-    background-color: #c793e0;
+    /** background-color: #c793e0; **/
     display:flex;
     flex-direction: row;
     height: 90px;
@@ -24,6 +28,7 @@
 .burger-menu {
     align-self: center;
     width: 30%;
+    color:white;
 }
 
 .header .logo img {
@@ -34,6 +39,10 @@
 
 .nav-tools {
     width: 30%;
+}
+
+.icon {
+    color:whitesmoke;
 }
 
 .header .nav-tools ul {
@@ -50,7 +59,7 @@
 
 
 .buscar {
-    background-color: #c793e0;
+    /**background-color: #c793e0;**/
     text-align: center;
     padding: 3%;
 }
@@ -70,35 +79,94 @@
     flex-direction: row;
     list-style: none;
     justify-content: space-around;
-    background-color: #d5c0dd;
+    
+}
+
+.nav-bar a{
+    color: white;
+    text-decoration: none;
 }
 
 main {
-    background-color: aquamarine;
-    height: 200px;
+    background-color: whitesmoke;
     width: 100%;
 }
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.contenido {
+    width: 70vh;
+    text-align: center;
+}
+
+.slider-left {
+
+}
+
+.slider-right {
+
+}
+
+.products {
+    display: flex;
+    padding: 10px 0;
+}
+
+.portada {
+    width: 100px;
+    height: 125px;
+    padding: 5px;
+}
+
+section article {
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid grey;
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 170px;
+}
+
+h4 {
+    font-size: 15px;
+    border-top: 1px solid;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: antiquewhite;
+    /**background-color: antiquewhite;**/
 }
 
 footer div ul li {
     display: flex;
     flex-direction: column;
     list-style: none;
+
 }
 
 footer div ul li a {
     text-decoration: none;
     font-size: 15px;
+    color:whitesmoke;
     padding: 2%;
 }
 
 footer h2 {
     font-size: 20px;
+    color:white;
 }
 
 .lista {
