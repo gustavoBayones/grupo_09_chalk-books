@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+body {
+    background-image: url("/images/background-img.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+.nav-bar-header {
+    /** background-color: #c793e0; **/
+    display:flex;
+    flex-direction: row;
+    height: 90px;
+    padding: 5px 1% 5px 7%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.burger-menu {
+    align-self: center;
+    width: 30%;
+    color:white;
+}
+
+.header .logo img {
+    height: 65px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.nav-tools {
+    width: 30%;
+}
+
+.icon {
+    color:whitesmoke;
+}
+
+.header .nav-tools ul {
+    list-style: none;
+    flex-direction: row;
+    display: flex;
+}
+
+.header .nav-tools ul li {
+    justify-content: space-between;
+    padding: 15px;
+    width: 30%
+}
+
+
+.buscar {
+    /**background-color: #c793e0;**/
+    text-align: center;
+    padding: 3%;
+}
+
+.buscar i {
+    background-color: white;
+    margin: -30px;
+}
+
+.barra-busqueda {
+    width: 70%;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    
+}
+
+.nav-bar a{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.nav-bar li {
+    width: 25%;
+    text-align: center;
+    border: 1px solid white;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /**background-color: antiquewhite;**/
+}
+
+footer div ul li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+
+footer div ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color:whitesmoke;
+    padding: 2%;
+}
+
+footer h2 {
+    font-size: 20px;
+    color:white;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.sobre-nosotros, .ayuda, .medios, .contacto {
+    padding: 3%;
+}
+
+.redes {
+        height:80%;
+}
+
+.pagos {
+     width: 100%;
+     height: 110px;
+     padding: 1%;
+}
+
+.legales p {
+    font-size: 10px;
+}
+
+main {
+    background-color: whitesmoke;
+}
+
+.portada {
+    width: 20vw;
+}
+
+.producto {
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    margin: 5px;
+    border-bottom: 1px solid grey;
+}
+
+.cantidad input{
+    width: 30px;
+}
+
+.img-det {
+    display: flex;
+    width: 70vw;
+}
+
+.tit-det {
+    font-size: 15px;
+}
+
+.descripcion {
+    font-size: 12px;
+}
+
+.detalles {
+    margin-left: 5px;
+}
+
+.right-det {
+    display: flex;
+}
+
+.price {
+    font-size: 15px;
+}
+
+.precio {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.cantidad {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.pricetot {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+}
+
+.pricetot p {
+    align-self: flex-end;
+}
+
+.seguir {
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    background-color: grey;
+    color:whitesmoke;
+}
+
+.comprar {
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    background-color: grey;
+    color:whitesmoke;
+}
