@@ -15,7 +15,16 @@ body {
 }
 
 
+.imagen{
+    width: 300px;
+    height: 150px;
+}
 
+.promoImagen{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
 .nav-bar-header {
     /** background-color: #c793e0; **/
     display:flex;
@@ -97,6 +106,10 @@ body {
     border: 1px solid white;
 }
 
+.nav-bar li:hover{
+    background-color: rgba(126, 126, 134, 0.8);
+}
+
 main {
     background-color: whitesmoke;
     width: 100%;
@@ -142,6 +155,9 @@ main h3 {
     padding: 5px;
 }
 
+.test{
+    margin-left: auto;
+}
 section article {
     margin: auto;
     border-radius: 20px;
@@ -174,6 +190,7 @@ flex-direction: row;
 font-size: 16px;
 }
 
+
 .top10-padre {
  margin-left: 5px;
  margin-right: 5px;
@@ -188,6 +205,10 @@ font-size: 16px;
 .descripcion-top10 {
     font-size: 12px;
     display: none;
+}
+
+.bannercitos{
+    
 }
 
 footer {
@@ -216,16 +237,32 @@ footer h2 {
     color:white;
 }
 
-.lista {
+/* .lista {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-}
+} */
 
 .sobre-nosotros, .ayuda, .medios, .contacto {
     padding: 3%;
+}
+
+.icored{
+    color: rgba(255, 255, 255, 1);
+    font-size: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    border:rgba(255, 255, 255, 0.5) solid 1px;
+    margin-top: 5px;
+}
+.icored:hover{
+    color: rgba(126, 126, 134, 0.8)
+}
+.seguir{
+    display: flex;
+    justify-content: space-around;
 }
 
 .redes {
@@ -242,22 +279,69 @@ footer h2 {
     font-size: 10px;
 }
 
+@media(min-width: 360px){
+    .bannercitos,
+    .medios{
+        display: none;
+    }
+
+    .lista {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 @media (min-width: 700px) {
 
-.productos-padre {
+    .contenedor{
+        display: flex;
+    }
+    .lista{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: baseline;
+        justify-content: center;
+    }
+    section{
+        width: 50%;
+    }
+
+   
+  
+    .bannercitos{
+        display: block;
+    }
+
+    .ofertas {
+        width:50%;
+    }
+
+    .productos-padre {
     display: flex;
     justify-content: space-between;
 }
-.products {
+    .products {
     justify-content: space-between;
     width: 50vw;
 }
 
-section article {
+    section article {
     width: 22vw;
 }
 
-.descripcion-top10 {
+    .descripcion-top10 {
     display: block;
 }
+}
+
+@media(min-width: 1024px){
+    .medios{
+        display: block;
+    }
+    .descripcion-top10{
+        font-size: 13px;
+    }
 }
