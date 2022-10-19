@@ -42,10 +42,10 @@ body {
     color:white;
 }
 
-.header .logo img {
-    height: 65px;
-    border-radius: 50%;
+.header .logo p {
     margin-top: 10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
 }
 
 .nav-tools {
@@ -215,7 +215,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /**background-color: antiquewhite;**/
+    background-color: black;
 }
 
 footer div ul li {
@@ -277,6 +277,7 @@ footer h2 {
 
 .legales p {
     font-size: 10px;
+    color: white;
 }
 
 @media(min-width: 360px){
