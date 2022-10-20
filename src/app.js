@@ -14,6 +14,9 @@ app.listen(3030, ()=>{
     console.log('Servidor corriendo en puerto 3030!');
 })
 
+app.set('views', path.join(__dirname, 'views'));
+
+
 /*app.get ('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
