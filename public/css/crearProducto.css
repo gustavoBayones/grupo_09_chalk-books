@@ -1,0 +1,45 @@
+main{
+    background-color: whitesmoke;
+}
+main h1 {
+    text-align: center;
+    padding: 10px;
+}
+.div-padre{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-padre div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.descProduct{
+    display: flex;
+    flex-direction: column;
+}
+
+.valor {
+    flex-direction: row !important;
+    padding: 0 !important;
+}
+
+.valor label, .valor p, .valor input {
+    margin-right: 10px;
+}
+
+.stock {
+    width: 50px;
+}
+
+.precio {
+    width: 80px;
+}
+
+.imagen {
+    padding: 0 !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

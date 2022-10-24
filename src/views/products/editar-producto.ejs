@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/crearProducto.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <h1>Edicion de Producto</h1>
+        <form action="/" method="get">
+        <div class="div-padre">
+            <div>
+                <label for="nombreProducto">Titulo del libro</label>
+                <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del libro">
+            </div>
+            <div>
+                <label for="nombreAutor">Autor</label>
+                <input type="text" name="nombreAutor" id="nombreAutor" placeholder="Nombre del autor">
+            </div>
+            <div class="descProduct">
+                <label for="descProducto">Detalles</label>
+                <textarea name="descProducto" id="descProducto">
+                </textarea>
+            </div>
+            <div>
+                <div class="valor">
+                <label for="price">Precio</label>
+                <p>$</p>
+                <input class="precio" type="number" name="price" id="price" placeholder="Precio">
+                </div>
+            </div>
+            <div>
+                <div class="valor">
+                <label for="stock">Stock disponible</label>
+                <input class="precio" type="number" name="stock" id="stock" placeholder="stock">
+                </div>
+            <div class="imagen">
+            <label for="portada">Portada</label>
+            <input type="file" name="portada" id="portada" placeholder="portada">
+            </div>
+        </div>
+        </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

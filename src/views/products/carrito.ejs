@@ -1,53 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/carrito.css">
-    <title>Chalk n' Books</title>
 </head>
 <body>
-    <header class="header">                                                                         <!-- Header segun el wireframe -->
-        <nav class="nav-bar-header">
-            <div class="burger-menu">
-                <i class="fa fa-bars burger 2x"></i>                                     <!-- Burguer menu -->
-            </div>
-            <div class="logo">
-                <img src="./images/chalkandbooks.png" alt="imagen de unos libros dibujados con diferentes colores de tizas"><!-- Logo -->
-            </div>
-            <div class="nav-tools">                                                                 <!-- Iconos de usuario -->
-                <ul>
-                    <li><a href="#7"><i class=" icon fa-solid fa-cart-shopping"></i></a></li>
-                    <li><a href="#"><i class="icon fa-solid fa-circle-user"></i></a></li>
-                    <li><a href="#"><i class="icon fa-solid fa-gear"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="buscador">
-        <div class="buscar">
-            <input type="search" class="barra-busqueda" placeholder="Realiza tu busqueda!">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        </div>
-       
-        <div>
-        <nav>
-            <ul class="nav-bar">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="#">Categorias</a></li>
-                <!--<li><a href="#">Novedades</a></li>
-                <li><a href="#">Mas Vendidos</a></li>
-                <li><a href="#">Comics</a></li>-->
-                <li><a href="#">Sucursales</a></li> 
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        </div>
-        
-    </header>
+    <%- include('../partials/header.ejs') %>
     <main>
         <div>
             <h2>Carrito</h2>
@@ -113,41 +72,6 @@
             </section>
         </div>
     </main>
-    <footer>
-                      
-        <div class="lista">   
-           
-           <ul class="sobre-nosotros">
-            <h2>Sobre nosotros</h2>
-            <li><a href="#">bla</a></li>
-            <li><a href="#">blabla</a></li>
-            <li><a href="#">blablabla</a></li>
-           </ul>
-           
-           <ul class="ayuda"> 
-            <h2>Ayuda</h2>
-                <li><a href="#">Preguntas Frecuentes</a></li>
-                <li><a href="#">Envíos</a></li>
-                <li><a href="#">Promociones</a></li>
-                <li><a href="#">Cancelaciones</a></li>
-                <li><a href="#">Devoluciones</a></li>
-            </ul>
-
-            <ul class="medios">
-                <h2>Medios de pago</h2>
-                <li><img class="pagos" src="\images\medios-de-pago.png"></li>
-            </ul>
-
-            <ul class="contacto">
-                <h2>Contacto</h2>
-                <li><img class="redes" src="/images/redes.jpg" ></li>
-            </ul>
-        </div>
-
-        <div class="legales">
-            <p>©Copyright todos los derechos reservados</p>
-        </div>
-
-    </footer> 
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
