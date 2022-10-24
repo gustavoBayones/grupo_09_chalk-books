@@ -1,6 +1,6 @@
 SPRINT 3: 
 
-1- Como grupo nos falto organizacion grupalm nos falta mas comunicacion.
+1- Como grupo nos falto organizacion grupal, nos falta mas comunicacion.
 2- Nos falto la utilizacion del tablero de Trello.
 3- Nos falto reunirnos mas veces o coordinar horarios.
 4- Estamos bien encaminados con los diseños de la web.
