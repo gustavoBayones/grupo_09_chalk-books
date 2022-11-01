@@ -180,6 +180,9 @@ footer h2 {
     .contenedor{
         display: flex;
     }
+    .bannercitos{
+        display: block;
+    }
     .lista{
         display: flex;
         flex-direction: row-reverse;

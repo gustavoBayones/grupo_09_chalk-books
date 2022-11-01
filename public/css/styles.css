@@ -118,9 +118,10 @@ font-size: 16px;
     display: none;
 }
 
-.bannercitos{
+/* section.bannercitos{
+    display: none;
     
-}
+}  */
 
 
 
@@ -146,12 +147,6 @@ font-size: 16px;
     
     section{
         width: 50%;
-    }
-
-   
-  
-    .bannercitos{
-        display: block;
     }
 
     .ofertas {

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+body, main{
+    background-color: whitesmoke;
+}
+main h2 {
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.portada {
+    width: 150px;
+    padding: 5px;
+    /* align-self: flex-start; */
+    border-radius: 20px;
+    border: 1px solid grey;
+    margin-left: 5%;
+    height: 170px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.div-padre{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-padre div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.descProduct{
+    display: flex;
+    flex-direction: column;
+}
+
+.valor {
+    flex-direction: row !important;
+    padding: 0 !important;
+}
+
+.valor label, .valor p, .valor input {
+    margin-right: 10px;
+}
+
+.stock {
+    width: 50px;
+}
+
+.precio {
+    width: 80px;
+}
+
+.imagen {
+    padding: 0 !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p.tit-det {
+    font-weight: bold;
+}
+
+.cantidad {
+    padding-bottom: 10px;
+}
+
+
+@media(min-width:400px) {
+    .img-det {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    }
+
+}

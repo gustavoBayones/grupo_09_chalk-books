@@ -1,2 +1,4 @@
+#elimina el node_modules de github
+**/node_modules
 # Ignora la carpeta node_modules
 node_modules

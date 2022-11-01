@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/detalleProducto.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div>
+            <h2>Detalle del producto</h2>
+            <section>
+                <article class="producto">
+                    <div class="img-det">
+                    <div>
+                        <img class="portada" src="/images/harrypotter-niñomaldito.png" alt="">
+                    </div>
+                    <div class="detalles">
+                        <p class="tit-det">Harry potter y el niño maldito</p>
+                        <!-- <p class="tit-det">Detalles</p> -->
+                        <br>
+                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam officia quidem, eius, ipsum expedita itaque modi, corrupti a illum repudiandae dicta fuga quam eum nisi? Cum quae perferendis pariatur quas.</p>
+                    </div>
+                    </div>
+                    <div class="right-det">
+                    <div class="precio">
+                        <p class="price">Precio</p>
+                        <p class="price">$ xxxx</p>
+                    </div>
+                    <div class="cantidad">
+                        <form action="GET">
+                            <p class="tit-det">Cantidad
+                            </p>
+                            
+                                <input type="number" name="cant" id="" placeholder="                  - 1 +" >
+                            
+                        </form>
+                    </div>
+                
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
