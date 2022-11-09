@@ -1,5 +1,7 @@
 const express = require('express');
 const mainRoutes = require("./routes/main")
+const productsRoutes = require("./routes/products")
+
 const app = express();
 
 const path = require('path');
@@ -36,3 +38,6 @@ app.get ('/carrito', (req, res) => {
 */
 
 app.use('/', mainRoutes);
+
+app.use('/products', productsRoutes);
+

@@ -6,6 +6,9 @@ let productController = {
     crearProducto: function(req,res){
         res.render('products/crear-producto')
     },
+    guardarProducto: function(req,res){
+        console.log(req.body)
+    },
 
     editarProducto: function(req,res){
         res.render('products/editar-producto')
