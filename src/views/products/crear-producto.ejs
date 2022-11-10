@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="css/crearProducto.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <%- include('../partials/head.ejs') %>
+    
     
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
         <h1>Creacion de Producto</h1>
-        <form action="/products/create" method="post">
+        <form action="/products/crearProducto" method="post">
         <div class="div-padre">
             <div>
                 <label for="nombreProducto">Titulo del libro</label>
@@ -40,6 +41,9 @@
             <div class="imagen">
             <label for="portada">Portada</label>
             <input type="file" name="portada" id="portada" placeholder="portada">
+            </div>
+            <div class="boton">
+                <input type="submit" value="Enviar">
             </div>
         </div>
         </form>
