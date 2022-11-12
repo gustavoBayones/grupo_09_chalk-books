@@ -1,7 +1,11 @@
+const fs = require('fs');
+const path = require('path');
 let productController = {
 
     index: function(req,res){
-        res.render('products/products');
+        let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+        let listProducts = JSON.parse(newListproduct)
+        res.render('products/products', {listProducts: listProducts});
     },
 
 
@@ -17,7 +21,25 @@ let productController = {
         console.log(req.body)
         if(req.file){
             console.log(req.file)
-            res.send('se subio el archivo')
+            let newProduct = {
+                nombreProducto: req.body.nombreProducto,
+                nombreAutor: req.body.nombreAutor,
+                descProducto: req.body.descProducto,
+                price: req.body.price,
+                stock: req.body.stock,
+                portada: req.file.filename,
+            }
+            let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+            let listProducts = JSON.parse(newListproduct)
+            let newID = listProducts[listProducts.length - 1].id + 1;
+            newProduct.id = newID;
+            listProducts.push(newProduct);
+            
+            let productsJSON = JSON.stringify(listProducts);
+
+            fs.writeFileSync(path.join(__dirname, '../data/product.json'), productsJSON);
+
+            res.render('products/products')
         }
         else{
             res.render('products/crear-producto')

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+
+    
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div>
+        <% for(let i = 0; i < listProducts.length ; i++) {%> 
+            <section>
+                <div class="image">
+                    <img src="images/portadas/<%= listProducts[i].portada %>">
+                </div>
+                <div>
+                    <div class="titulo">
+                        <a href="/products/<%= listProducts[i].id %> "><%= listProducts[i].titulo %> </a>
+                    </div>
+                    <div class="genero">
+                        <p>Genero: <%=listProducts[i].genero  %> </p>
+                        <p>Autor: <%=listProducts[i].autor  %>  </p>
+                    </div>
+                    <div class="descripcion">
+                        <p>Descripcion: <%=listProducts[i].descripcion  %> </p>
+                    </div>
+                </div>
+                <div class ="padre-valor">
+                    <div class="valor">
+                        <p>Stock disponible: <%= listProducts[i].stock %> </p>
+                    </div>
+                    <div class="valor">
+                        <p>Precio: $ <%= listProducts[i].precio %> </p>
+                    </div>
+                </div>
+
+            </section>
+        <% } %> 
+    </div>
+
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
