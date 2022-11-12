@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const mainRoutes = require("./routes/main")
 const productsRoutes = require("./routes/products")
 
@@ -19,6 +20,9 @@ app.listen(3030, ()=>{
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', mainRoutes);
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use('/products', productsRoutes);
 

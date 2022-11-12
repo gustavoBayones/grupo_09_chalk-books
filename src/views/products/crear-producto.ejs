@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/crearProducto.css">
-    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/crearProducto.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <%- include('../partials/head.ejs') %>
     
     
@@ -11,7 +13,7 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <h1>Creacion de Producto</h1>
-        <form action="/products/crearProducto" method="post">
+        <form action="/products/crearProducto" method="post" enctype="multipart/form-data">
         <div class="div-padre">
             <div>
                 <label for="nombreProducto">Titulo del libro</label>
