@@ -16,6 +16,10 @@ main h2 {
     font-size: 24px;
 }
 
+.detalles {
+    margin: 2vw;
+}
+
 .portada {
     width: 150px;
     padding: 5px;
@@ -23,8 +27,7 @@ main h2 {
     border-radius: 20px;
     border: 1px solid grey;
     margin-left: 5%;
-    height: 170px;
-    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    height: 250px;
 }
 
 .div-padre{
@@ -52,6 +55,12 @@ main h2 {
     margin-right: 10px;
 }
 
+.right-det {
+    
+    margin-left: 2vw;
+
+}
+
 .stock {
     width: 50px;
 }
@@ -72,13 +81,19 @@ p.tit-det {
 
 .cantidad {
     padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit {
+    margin-right: 2vw;
 }
 
 
 @media(min-width:400px) {
     .img-det {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: center;
     }
 

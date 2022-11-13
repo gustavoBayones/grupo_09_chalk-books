@@ -52,7 +52,11 @@ let productController = {
     },
 
     detalleProducto: function(req,res){
-        res.render('products/detalle-producto')
+        let idProduct = req.params.id - 1;
+        let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+        let listProducts = JSON.parse(newListproduct)
+        let product = listProducts[idProduct]
+        res.render('products/detalle-producto', {product : product})
     }
 }
 

@@ -16,27 +16,33 @@
                 <article class="producto">
                     <div class="img-det">
                     <div>
-                        <img class="portada" src="/images/harrypotter-niñomaldito.png" alt="">
+                        <img class="portada" src="/images/portadas/<%= product.portada %>">
                     </div>
                     <div class="detalles">
-                        <p class="tit-det">Harry potter y el niño maldito</p>
+                        <p class="tit-det"><%=  product.titulo %></p>
+                        <p> <%=  product.autor %></p>
+                        <p><%=  product.genero %></p>
                         <!-- <p class="tit-det">Detalles</p> -->
                         <br>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam officia quidem, eius, ipsum expedita itaque modi, corrupti a illum repudiandae dicta fuga quam eum nisi? Cum quae perferendis pariatur quas.</p>
+                        <p class="descripcion"><%=  product.descripcion %></p>
                     </div>
                     </div>
                     <div class="right-det">
                     <div class="precio">
                         <p class="price">Precio</p>
-                        <p class="price">$ xxxx</p>
+                        <p class="price">$ <%=  product.precio %></p>
                     </div>
                     <div class="cantidad">
-                        <form action="GET">
-                            <p class="tit-det">Cantidad
+                        <form action="/products/carrito">
+                            <p class="tit-det">
+                                Cantidad
                             </p>
-                            
                                 <input type="number" name="cant" id="" placeholder="                  - 1 +" >
-                            
+                                <input type="submit" value="Agregar al carrito">
+
+                        </form>
+                        <form class="edit" action="/products/detalleProducto/<%= product.id %>/edit ">
+                            <input type="submit" value="Editar Producto">
                         </form>
                     </div>
                 

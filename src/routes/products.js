@@ -24,7 +24,7 @@ const productController = require("../controllers/productController")
 router.get('/', productController.index)
 router.get ("/carrito", productController.carrito)
 
-router.get ("/detalleProducto", productController.detalleProducto)
+router.get ("/detalleProducto/:id", productController.detalleProducto)
 
 router.get ("/crearProducto", productController.crearProducto)
 router.post ("/crearProducto", upload.single('portada'), productController.guardarProducto)
