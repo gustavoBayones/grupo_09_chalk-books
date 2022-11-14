@@ -22,10 +22,11 @@ let productController = {
         if(req.file){
             console.log(req.file)
             let newProduct = {
-                nombreProducto: req.body.nombreProducto,
-                nombreAutor: req.body.nombreAutor,
-                descProducto: req.body.descProducto,
-                price: req.body.price,
+                titulo: req.body.nombreProducto,
+                autor: req.body.nombreAutor,
+                genero: req.body.genero,
+                descripcion: req.body.descProducto,
+                precio: req.body.price,
                 stock: req.body.stock,
                 portada: req.file.filename,
             }
@@ -39,7 +40,7 @@ let productController = {
 
             fs.writeFileSync(path.join(__dirname, '../data/product.json'), productsJSON);
 
-            res.render('products/products')
+            res.render('products/products', {listProducts: listProducts})
         }
         else{
             res.render('products/crear-producto')
@@ -47,8 +48,74 @@ let productController = {
 
     },
 
-    editarProducto: function(req,res){
-        res.render('products/editar-producto')
+    formEditarProducto: function(req,res){
+        let idProduct = req.params.id - 1;
+        let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+        let listProducts = JSON.parse(newListproduct)
+        let product = listProducts[idProduct]
+        res.render('products/editar-producto', {product: product})
+    },
+
+    editarProducto : function(req,res){
+        let idProduct = req.params.id - 1;
+        let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+        let listProducts = JSON.parse(newListproduct)
+        let oldProduct = listProducts[idProduct]
+        if (req.file){                              //si no se sube un archivo de imagen vuelvo a la edicion
+            let newProduct = {
+                titulo: req.body.nombreProducto,
+                autor: req.body.nombreAutor,
+                genero: req.body.genero,
+                descripcion: req.body.descProducto,
+                precio: req.body.price,
+                stock: req.body.stock,
+                portada: req.file.filename,
+            }
+            // logica de edicion
+            let reemplazar = function(objA,objB){
+                if(objA == undefined){
+                    objA = objB
+                }
+            }
+            reemplazar(newProduct.titulo, oldProduct.titulo)
+            reemplazar(newProduct.autor, oldProduct.autor)
+            reemplazar(newProduct.genero, oldProduct.genero)
+            reemplazar(newProduct.descripcion, oldProduct.descripcion)
+            reemplazar(newProduct.precio, oldProduct.precio)
+            reemplazar(newProduct.stock, oldProduct.stock)
+            reemplazar(newProduct.portada, oldProduct.portada)
+            newProduct.id = oldProduct.id
+            listProducts[idProduct] = newProduct
+            let productsJSON = JSON.stringify(listProducts);
+    
+            fs.writeFileSync(path.join(__dirname, '../data/product.json'), productsJSON);
+    
+    
+            res.render('products/products', {listProducts: listProducts})
+        }
+        else {
+            let idProduct = req.params.id - 1;
+            let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+            let listProducts = JSON.parse(newListproduct)
+            let product = listProducts[idProduct]
+            res.render('products/editar-producto', {product: product})
+        }
+        
+    },
+
+    borrarProducto: function(req,res){
+        let idProduct = req.params.id - 1;
+        let newListproduct = fs.readFileSync(path.join(__dirname, '../data/product.json'), {encoding: 'utf-8'});
+        let listProducts = JSON.parse(newListproduct)
+        let product = listProducts[idProduct]
+        let newListProducts = listProducts.filter(products => products != product )
+        let productsJSON = JSON.stringify(newListProducts);
+    
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), productsJSON);
+    
+    
+        res.render('products/products', {listProducts: newListProducts})
+
     },
 
     detalleProducto: function(req,res){

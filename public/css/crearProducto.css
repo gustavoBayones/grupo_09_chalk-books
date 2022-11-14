@@ -43,3 +43,9 @@ main h1 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.delete {
+    display: flex;
+    width: 30%;
+    margin: auto;
+}
