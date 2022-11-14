@@ -10,6 +10,21 @@ section {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.226);
 }
 
+.agregarProd {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1vw;
+}
+
+.agregarProd input {
+    background-color: rgb(0, 189, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 23%);
+}
+
 section div {
     padding: 3px;
 }

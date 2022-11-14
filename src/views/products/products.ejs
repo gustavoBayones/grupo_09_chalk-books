@@ -10,11 +10,16 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+    <div class="agregarProd">
+        <form action="/products/crearProducto" method="get">
+            <input type="submit" value="Agregar Producto">
+        </form>
+    </div>
     <div>
         <% for(let i = 0; i < listProducts.length ; i++) {%> 
             <section>
                 <div class="image">
-                    <img src="images/portadas/<%= listProducts[i].portada %>">
+                    <img src="/images/portadas/<%= listProducts[i].portada %>">
                 </div>
                 <div>
                     <div class="titulo">
