@@ -1,7 +1,7 @@
 const express = require('express');
-const multer = require('multer');
 const mainRoutes = require("./routes/main")
 const productsRoutes = require("./routes/products")
+const userRoutes = require("./routes/user")
 
 const app = express();
 
@@ -28,4 +28,5 @@ app.use(express.json());
 app.use(methodOverride('_method'))
 
 app.use('/products', productsRoutes);
+ // app.use('/users', require("./routes/user")); Crashea y no entiendo porque, asique lo dejo en el / y lo manejo desde mainRoutes
 

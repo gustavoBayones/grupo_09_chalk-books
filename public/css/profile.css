@@ -1,0 +1,12 @@
+main{
+    background-color: whitesmoke;
+}
+
+main img {
+    height: 200px;
+    margin: 5px;
+}
+
+p {
+    margin: 7px;
+}

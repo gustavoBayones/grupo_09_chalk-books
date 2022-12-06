@@ -3,10 +3,10 @@
         "id": 1,
         "nombre": "Lautaro",
         "apellido": "Parandelli",
-        "email": "lautaro.parandelli@digitalhouse.com",
+        "email": "lautaroparandelli@gmail.com",
         "password": "123456",
         "rol": "admin",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     },
 
     {
@@ -16,7 +16,7 @@
         "email": "magaliorellanos@gmail.com",
         "password": "123456",
         "rol": "admin",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     },
 
     {
@@ -26,7 +26,7 @@
         "email": "lucasabustos@hotmail.com",
         "password": "123456",
         "rol": "admin",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     },
 
     {
@@ -36,17 +36,7 @@
         "email": "aldovarela@gmail.com",
         "password": "123456",
         "rol": "admin",
-        "avatar": "./img/default.png"
-    },
-
-    {
-        "id": 5,
-        "nombre": "Lautaro",
-        "apellido": "Parandelli",
-        "email": "lautaro.parandelli@digitalhouse.com",
-        "password": "123456",
-        "rol": "admin",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     },
 
     {
@@ -56,7 +46,7 @@
         "email": "gustavoemabayones@gmail.com",
         "password": "123456",
         "rol": "admin",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     },
 
     {
@@ -66,6 +56,6 @@
         "email": "traemelacopamessi@gmail.com",
         "password": "123456",
         "rol": "viewer",
-        "avatar": "./img/default.png"
+        "avatar": "default.png"
     }
 ]

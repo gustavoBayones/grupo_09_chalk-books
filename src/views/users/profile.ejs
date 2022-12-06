@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div>
+            <div class="profile">
+                <img src="/images/avatar/<%= user.avatar %>" alt="">
+            </div>
+            <div>
+                <p><%= user.nombre %> </p>
+                <p><%= user.apellido%></p>
+                <p><%= user.email %> </p>
+            </div>
+            <form action="" method="get">
+                <input type="submitt" value="Editar">
+            </form>
+
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

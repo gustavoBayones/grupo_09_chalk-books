@@ -73,6 +73,13 @@ main {
     color: white;
 }
 
+.avatar {
+    font-family:"Fira Sans", serif;
+    font-style: italic;
+    color: white;
+    margin-bottom: 0;
+}
+
 .boton {
     background-color: rgba(54, 54, 54, 0.9);
     color: white;
