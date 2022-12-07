@@ -86,7 +86,7 @@ let userController = {
     },
 
     guardarEditContra: function(req,res){
-        console.log(req.body)
+        console.log(req.body) //devuelve undefined :( 
         let id = req.params.id -1;
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
