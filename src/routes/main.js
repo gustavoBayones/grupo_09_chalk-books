@@ -24,8 +24,8 @@ const storage = multer.diskStorage({
 const upload = multer( { storage });
 
 
-
-
+router.get ("/", mainController.index)
+// Los /user estan aca porque crashea si lo hago en el router de usuarios
 router.get ("/user/login", userController.login)
 
 router.get ("/user/register", userController.register)
@@ -34,6 +34,14 @@ router.post ("/user/register", upload.single('avatar'), userController.guardarUs
 
 router.get ("/user/profile/:id", userController.profile)
 
-router.get ("/", mainController.index)
+router.get ("/user/profile/:id/editProfile", userController.editProfile)
+
+router.post("/user/profile/:id/editProfile",upload.single('avatar'), userController.guardarEditProfile)
+
+router.get("/user/profile/:id/editContrasena", userController.editContra)
+
+router.post("/user/profile/:id/editContrasena", userController.guardarEditContra)
+
+
 
 module.exports = router;

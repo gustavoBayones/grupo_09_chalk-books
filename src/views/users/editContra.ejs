@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Chalk n' Books</title>
+    <header>
+        <div class="titulo"><p>Chalk n' Books</p></div>
+    </header>
+    <main>
+        <div class="form-padre">
+            <form class="formulario" action="/user/profile/<%= user.id %>/editContrasena" method="post">
+                <label for=""><input class="input-texts" type="password" name="password" placeholder="Nueva Contraseña"></label>
+                <label for=""><input class="input-texts" type="password" name="coPassword" placeholder="Confirme Contraseña"></label>
+                <div class="botones">
+                <button class="boton" type="submit">Editar</button>
+            </form>
+            </div>
+
+        </div>
+    </main>
+</head>
+<body>
+    
+</body>
+</html>

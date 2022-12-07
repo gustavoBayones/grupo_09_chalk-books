@@ -8,19 +8,26 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-        <div>
-            <div class="profile">
+        <div  class="profile">
+            <div>
                 <img src="/images/avatar/<%= user.avatar %>" alt="">
             </div>
-            <div>
-                <p><%= user.nombre %> </p>
-                <p><%= user.apellido%></p>
-                <p><%= user.email %> </p>
+            <div class="info">
+                <p class="tipo">Nombre</p>
+                <p class="dato"><%= user.nombre %> </p>
+                <p class="tipo">Apellido</p>
+                <p class="dato"><%= user.apellido%></p>
+                <p class="tipo">Email</p>
+                <p class="dato"><%= user.email %> </p>
             </div>
-            <form action="" method="get">
-                <input type="submitt" value="Editar">
-            </form>
-
+        </div>
+        <div class="botones">
+        <form action="/user/profile/<%= user.id %>/editContrasena" method="get">
+            <button class="buttom-contra" type="submitt">Cambiar Contraseña</button>
+        </form>
+        <form action="/user/profile/<%= user.id %>/editProfile" method="get">
+            <button class="buttom" type="submitt" >Editar</button>
+        </form>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>

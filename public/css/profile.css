@@ -3,10 +3,85 @@ main{
 }
 
 main img {
-    height: 200px;
+    height: 30vw;
     margin: 5px;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
 p {
     margin: 7px;
+}
+
+.profile {
+    display:flex;
+    padding: 2% 2% 2% 0;
+}
+
+.botones {
+    display:flex;
+}
+
+.buttom {
+    background-color: rgb(0, 189, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 23%);
+    width: 64px;
+}
+
+.buttom-contra{
+    background-color: rgb(0, 189, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 23%);
+    width: 192px;
+}
+
+.info{
+    width: 50vw;
+}
+
+.dato{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tipo{
+    font-size: 15px;
+    text-decoration: underline solid;
+    font-family: 'Roboto', sans-serif;
+}
+
+form{
+    padding: 10px;
+    text-align: end;
+}
+
+@media (min-width: 700px) {
+main img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.dato{
+    font-size: 15px;
+}
+
+.tipo{
+    font-size: 20px;
+    text-decoration: underline solid;
+}
+
+.botones {
+    flex-direction:row-reverse;
+}
+
+main {
+    height: 500px;
+}
 }
