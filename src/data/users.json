@@ -1,1 +1,83 @@
-[{"id":1,"nombre":"Lautaro","apellido":"Parandelli","email":"lautaroparandelli@gmail.com","password":"123456","rol":"admin","avatar":"default.png"},{"id":2,"nombre":"Maga","apellido":"Orellanos ","email":"magaliorellanos@gmail.com","password":"123456","rol":"admin","avatar":"default.png"},{"id":3,"nombre":"Lucas","apellido":"Bustos","email":"lucasabustos@hotmail.com","password":"123456","rol":"admin","avatar":"default.png"},{"id":4,"nombre":"Aldo","apellido":"Varela","email":"aldovarela@gmail.com","password":"123456","rol":"admin","avatar":"default.png"},{"id":5,"nombre":"Gustavo","apellido":"Bayones","email":"gustavoemabayones@gmail.com","password":"123456","rol":"admin","avatar":"default.png"},{"id":6,"nombre":"Lionel","apellido":"Messirve","email":"traemelacopamessi@gmail.com","password":"123456","rol":"viewer","avatar":"default.png"}]
+[
+ {
+  "id": 2,
+  "nombre": "Maga",
+  "apellido": "Orellanos ",
+  "email": "magaliorellanos@gmail.com",
+  "password": "123456",
+  "rol": "admin",
+  "avatar": "default.png"
+ },
+ {
+  "id": 3,
+  "nombre": "Lucas",
+  "apellido": "Bustos",
+  "email": "lucasabustos@hotmail.com",
+  "password": "123456",
+  "rol": "admin",
+  "avatar": "default.png"
+ },
+ {
+  "id": 4,
+  "nombre": "Aldo",
+  "apellido": "Varela",
+  "email": "aldovarela@gmail.com",
+  "password": "123456",
+  "rol": "admin",
+  "avatar": "default.png"
+ },
+ {
+  "id": 5,
+  "nombre": "Gustavo",
+  "apellido": "Bayones",
+  "email": "gustavoemabayones@gmail.com",
+  "password": "123456",
+  "rol": "admin",
+  "avatar": "default.png"
+ },
+ {
+  "id": 6,
+  "nombre": "Lionel",
+  "apellido": "Messirve",
+  "email": "traemelacopamessi@gmail.com",
+  "password": "123456",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 7,
+  "nombre": "Gonza",
+  "apellido": "Montiel",
+  "email": "millo@la3ra.com",
+  "password": "123456",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 8,
+  "nombre": "Dibu",
+  "apellido": "Martinez",
+  "email": "megadibu@tecomo.com",
+  "password": "$2a$10$mxvkpyQn.gR0VlRSlEymA.NU/u4PU27WInV1Pov0UkJ/k64vcob/m",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 9,
+  "nombre": "Testeo",
+  "apellido": "Testeo",
+  "email": "testeo@gmail.com",
+  "password": "$2a$10$3P8HYRKUJWbjYBhdfHRS7eZ7QAptzB4XmXHppJo0aE6vrCQn2TVuu",
+  "rol": "viewer",
+  "avatar": "avatar-Testeo-1672513376098.png"
+ },
+ {
+  "id": 1,
+  "nombre": "Lautaro",
+  "apellido": "Parandelli",
+  "email": "lautaroparandelli@gmail.com",
+  "password": "$2a$10$Ft2wQYFcoIbSZERvANsk3edXzc5S/gOdakj3zkqQdz0MThtXefIqq",
+  "rol": "admin",
+  "avatar": "avatar-Lautaro-1672515875666.png"
+ }
+]

@@ -1,16 +1,81 @@
 const path = require('path')
 const fs = require('fs');
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
+
+
+
 let userController = {
+    compareID:function(id1,id2){
+        if(id1 != id2){
+            return res.send('NOT EQUALS ID')
+        }
+    return true;
+    },
+
     login: function(req,res){
         res.render('users/login')
     },
+
+    loginProcess: function(req,res){
+        let userToLogin = User.findByField('email', req.body.email);
+        if(!userToLogin){
+            return res.render('users/login', {
+                errors : {
+                    email :{
+                        msg: 'Email o contraseña incorrecta'
+                    }
+                }
+            })
+        }
+        if(userToLogin){
+            let passwordCompare = bcrypt.compareSync( req.body.password, userToLogin.password ); //lautaro
+            if(passwordCompare) {
+                delete userToLogin.password
+                req.session.userLogged = userToLogin
+                res.render('index')
+            } else {
+                return res.render('users/login', {
+                    errors : {
+                        email :{
+                            msg: 'Email o contraseña incorrecta'
+                        }
+                    }
+                })
+            }
+        }
+    },
+
 
     register: function(req,res){
         res.render('users/registro') 
     },
 
     guardarUsuario: function(req,res){
-        let newUser = {
+        const resultValidation = validationResult(req)
+        if(resultValidation.errors.length > 0){
+            return res.render('users/registro', {
+                errors: resultValidation.mapped(),
+                data: req.body
+            })
+        }
+
+        let userInDB = User.findByField('email', req.body.email)
+        if (userInDB){
+            return res.render('users/registro', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya está registrado'
+                    }
+                },
+                data: req.body
+            })
+        }
+
+        User.create(req)
+        res.redirect('/');
+        /*let newUser = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
@@ -32,31 +97,32 @@ let userController = {
             listUsers.push(newUser)
             let userJson = JSON.stringify(listUsers)
             fs.writeFileSync(path.join(__dirname, '../data/users.json'), userJson);
-            res.redirect('/');
+            res.redirect('/');*/
 
+            
     },
 
     profile: function(req,res){
-        let id = req.params.id -1;
+        /*let id = req.params.id -1;         //PROCESO DE VISTA ANTIGUO SIN SESSION
 
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]
+        let user = listUsers[id]*/
 
 
 
-        res.render('users/profile', {user: user})
+        res.render('users/profile', {user: req.session.userLogged})
     },
 
     editProfile: function(req,res){
-        let id = req.params.id -1;
-        let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
+        console.log(req.session.userLogged)
+        /*let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]
-        res.render('users/editProfile', {user:user})
+        let user = listUsers[id]*/
+        res.render('users/editProfile', {user: req.session.userLogged})
     },
     guardarEditProfile: function(req,res){
-        let id = req.params.id -1;
+        let id = req.session.userLogged.id
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
         let user = listUsers[id]
@@ -68,7 +134,7 @@ let userController = {
             user.avatar = req.file.filename
         }
         else{
-            user.avatar = "default.png"
+            user.avatar = req.session.userLogged.avatar
         }
         listUsers[id] = user;
         let userJSON = JSON.stringify(listUsers)
@@ -78,6 +144,7 @@ let userController = {
 
     editContra: function(req,res){
         let id = req.params.id -1;
+        this.compareID(req.session.user.id, id);
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
         let user = listUsers[id]
@@ -86,6 +153,7 @@ let userController = {
     },
 
     guardarEditContra: function(req,res){
+        console.log(req.params.id)
         console.log(req.body) //devuelve undefined :( 
         let id = req.params.id -1;
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
@@ -96,6 +164,11 @@ let userController = {
         let userJSON = JSON.stringify(listUsers)
         fs.writeFileSync(path.join(__dirname, '../data/users.json') , userJSON);
         res.redirect("/")
+    },
+
+    logout: function(req, res) {
+        req.session.destroy()
+        return res.redirect("/")
     }
 
 

@@ -7,16 +7,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/register.css">
     <title>Chalk n' Books</title>
     <header>
         <div class="titulo"><p>Chalk n' Books</p></div>
     </header>
     <main>
         <div class="form-padre">
-            <form class="formulario" action="/" method="get">
-                <label for=""><input class="input-texts" type="text" name="username" placeholder="Nombre de usuario"></label>
+            <form class="formulario" action="/user/login" method="POST">
+                <label for=""><input class="input-texts" type="text" name="email" placeholder="Email"></label>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="error">
+                    <p><%= errors.email.msg %> </p>
+                    </div>
+                <% } %>
                 <label for=""><input class="input-texts" type="password" name="password" placeholder="Contraseña"></label>
                 <div class="botones">
                 <button class="boton" type="submit">Ingresar</button>

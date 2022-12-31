@@ -2,12 +2,20 @@ const express = require('express');
 const mainRoutes = require("./routes/main")
 const productsRoutes = require("./routes/products")
 const userRoutes = require("./routes/user")
-
 const app = express();
-
 const path = require('path');
-
 const methodOverride = require('method-override');
+const session = require('express-session');
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'))
+app.use(session({
+    secret: 'idk',
+    resave: false,
+    saveUninitialized: false
+}))
+
 
 const publicPath = path.join(__dirname, '../public');
 
@@ -15,18 +23,14 @@ app.use( express.static (publicPath) );
 
 app.set('view engine', 'ejs');
 
-app.listen(3030, ()=>{
-    console.log('Servidor corriendo en puerto 3030!');
-})
-
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', mainRoutes);
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(methodOverride('_method'))
-
 app.use('/products', productsRoutes);
  // app.use('/users', require("./routes/user")); Crashea y no entiendo porque, asique lo dejo en el / y lo manejo desde mainRoutes
+
+ app.listen(3030, ()=>{
+    console.log('Servidor corriendo en puerto 3030!');
+})
 

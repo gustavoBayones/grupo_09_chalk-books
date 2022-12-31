@@ -104,6 +104,13 @@ main {
     color:aliceblue;
 }
 
+.error p {
+    color: #ff6961;
+    margin: 0;
+    font-family: "roboto";
+    font-size: 12px;
+}
+
 @media (min-width: 768px) {
 
 }
