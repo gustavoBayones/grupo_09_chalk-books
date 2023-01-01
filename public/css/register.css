@@ -51,6 +51,12 @@ main {
     color: white;
 }
 
+.remember {
+    font-size: 10px;
+    color: white;
+    align-self: flex-start;
+}
+
 .login {
     margin-bottom: 5px;
 }

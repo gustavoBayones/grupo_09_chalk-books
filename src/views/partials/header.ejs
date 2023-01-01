@@ -8,9 +8,11 @@
         </div>
         <div class="nav-tools">                                                                 <!-- Iconos de usuario -->               
             <ul>
-                <li><a href="/carrito"><i class=" icon fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="/user/profile"><i class="icon fa-solid fa-circle-user"></i></a></li>
+                <li><a href="/carrito"><i class=" icon fa-solid fa-cart-shopping"></i></a></li>
+                <% if (locals.logged) { %>
                 <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <% } %>
             </ul>
         </div>
     </nav>

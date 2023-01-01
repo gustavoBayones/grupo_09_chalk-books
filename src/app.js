@@ -6,6 +6,9 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const loggedViewMiddle = require('./middlewares/loggedViewMIddle')
+const cookies = require('cookie-parser')
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,6 +18,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+app.use(cookies());
+app.use(loggedViewMiddle);  //Va despues del session, es para visualizar cosas logeado o otras sin loggear.
+
 
 
 const publicPath = path.join(__dirname, '../public');

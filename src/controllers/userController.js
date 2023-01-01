@@ -29,12 +29,17 @@ let userController = {
                 }
             })
         }
+
         if(userToLogin){
             let passwordCompare = bcrypt.compareSync( req.body.password, userToLogin.password ); //lautaro
             if(passwordCompare) {
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
-                res.render('index')
+                if(req.body.remember){
+                    res.cookie( 'emailUsuario' , req.body.email , { maxAge : ((1000*60) * 1800)} )
+                }
+                
+                res.redirect('/')
             } else {
                 return res.render('users/login', {
                     errors : {
@@ -167,6 +172,7 @@ let userController = {
     },
 
     logout: function(req, res) {
+        res.clearCookie('emailUsuario')
         req.session.destroy()
         return res.redirect("/")
     }
