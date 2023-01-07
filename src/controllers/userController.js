@@ -79,6 +79,7 @@ let userController = {
         }
 
         User.create(req)
+        
         res.redirect('/');
         /*let newUser = {
             nombre: req.body.nombre,
@@ -143,31 +144,27 @@ let userController = {
         }
         listUsers[id] = user;
         let userJSON = JSON.stringify(listUsers)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json') , userJSON);
+        fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
         res.redirect("/")
     },
 
     editContra: function(req,res){
-        let id = req.params.id -1;
-        this.compareID(req.session.user.id, id);
-        let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
-        let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]
-        res.render('users/editContra', {user: user})
+        let id = req.session.userLogged.id;
+        res.render('users/editContra', {id: id})
 
     },
 
     guardarEditContra: function(req,res){
         console.log(req.params.id)
-        console.log(req.body) //devuelve undefined :( 
-        let id = req.params.id -1;
+        console.log(req.body) 
+        let id = req.session.userLogged.id
         let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         let listUsers = JSON.parse(newListUsers)
         let user = listUsers[id]
-        user.password = req.body.password
+        console.log(user.password)
+        user.password = bcrypt.hashSync(req.body.password, 10)
         listUsers[id] = user
-        let userJSON = JSON.stringify(listUsers)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json') , userJSON);
+        fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
         res.redirect("/")
     },
 

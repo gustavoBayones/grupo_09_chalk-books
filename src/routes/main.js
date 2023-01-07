@@ -21,12 +21,12 @@ const validations = [
     body('avatar').custom((value, {req}) =>{
         let file = req.file;
         if(file){
-        if(!(file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg")){
+        if((file.mimetype != "image/png" || file.mimetype != "image/jpg" || file.mimetype != "image/jpeg")){
             throw new Error('Las extensiones aceptada son .jpg y .png');
         }}
         return true;    //REVISAR 
 
-    })
+    }).withMessage('Las extensiones aceptada son .jpg y .png')
 ];
 
 const storage = multer.diskStorage({
