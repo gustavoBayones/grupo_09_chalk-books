@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require("../database/models")
 let productController = {
 
     index: function(req,res){
@@ -14,9 +15,10 @@ let productController = {
     },
 
     crearProducto: function(req,res){
-        res.render('products/crear-producto')
-        
-    },
+        //db.Generos.findAll()
+            //.then(function(generos){
+          res.render('products/crearProducto');
+            },
     guardarProducto: function(req,res){
         console.log(req.body)
         if(req.file){

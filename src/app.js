@@ -7,7 +7,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const loggedViewMiddle = require('./middlewares/loggedViewMIddle')
-const cookies = require('cookie-parser')
+const cookies = require('cookie-parser');
+const db = require('./database/models');
 
 
 app.use(express.urlencoded({ extended: false }));

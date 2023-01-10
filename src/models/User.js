@@ -43,7 +43,7 @@ const User = {
             apellido: req.body.apellido,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            rol: "viewer"
+            rol_id: 1
         }
         if(req.file){
             newUser.avatar = req.file.filename
