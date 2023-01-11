@@ -1,6 +1,7 @@
 module.exports = function (sequelize, dataTypes) {
-
-    let alias = "Libros";
+    const Autor = require ('./Autor')
+    const Genre = require ('./Genre')
+    let alias = "books";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -42,19 +43,17 @@ module.exports = function (sequelize, dataTypes) {
     }
 
 
-    const Libro = sequelize.define(alias, cols, config);
-    
-    // Libro.associate = function (models) {
-    //     Libro.belongsTo(models.Autor, {
-    //       as: 'autor',
-    //       foreignKey: 'autors_id',
-    //     });
-      
-    //     Libro.belongsTo(models.Genero, {
-    //       as: 'genero',
-    //       foreignKey: 'genres_id',
-    //     });
-    //   };
-
-    return Libro
+    const Book = sequelize.define(alias, cols, config);
+    Book.associate = function(model){
+        Book.belongsTo(model.genres, {
+            as: "genres_book",
+            foreignKey: "autor_id"
+        })
+        Book.belongsTo(model.autors,{
+            as: "autors_book",
+            foreignKey: "autors_id"
+        })
+    }
+        
+    return Book
 }

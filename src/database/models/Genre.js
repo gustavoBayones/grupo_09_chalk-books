@@ -1,6 +1,8 @@
+var db = require('./index');
+var Book = require('./Book')
+
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Generos";
-    const Libro = require('./Libro')(sequelize, dataTypes);
+    let alias = "genres";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -17,13 +19,13 @@ module.exports = function (sequelize, dataTypes) {
     }
 
 
-    const Genero = sequelize.define(alias, cols, config);
-    // Genero.associate = function (models) {
-    //     Genero.hasMany(models.Libro, {
-    //       as: 'libros',
-    //       foreignKey: 'genres_id',
-    //     });
-    //   };
+    const Genre = sequelize.define(alias, cols, config);
+    Genre.associate = function(model){
+        Genre.hasMany(model.books, {
+            as: "books_genre",
+            foreignKey: "autor_id"
+        })
+    }
 
-    return Genero
+    return Genre
 }

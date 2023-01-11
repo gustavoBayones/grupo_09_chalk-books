@@ -15,10 +15,12 @@ let productController = {
     },
 
     crearProducto: function(req,res){
-        //db.Generos.findAll()
-            //.then(function(generos){
-          res.render('products/crearProducto');
-            },
+        db.Genres.findAll()
+            .then(function(generos){
+                console.log(generos);
+          res.render('products/crear-producto');
+            })
+        },
     guardarProducto: function(req,res){
         console.log(req.body)
         if(req.file){
