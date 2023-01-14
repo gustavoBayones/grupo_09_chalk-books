@@ -16,29 +16,31 @@
         </form>
     </div>
     <div>
-        <% for(let i = 0; i < listProducts.length ; i++) {%> 
+        <% for(let i = 0; i < books.length ; i++) {%> 
             <section>
                 <div class="image">
-                    <img src="/images/portadas/<%= listProducts[i].portada %>">
+                    <img src="/images/portadas/<%= books[i].portada %>">
                 </div>
                 <div>
                     <div class="titulo">
-                        <a href="/products/detalleProducto/<%= listProducts[i].id %> "><%= listProducts[i].titulo %> </a>
+                        <a href="/products/detalleProducto/<%= books[i].id %> "><%= books[i].title %> </a>
                     </div>
                     <div class="genero">
-                        <p>Genero: <%=listProducts[i].genero  %> </p>
-                        <p>Autor: <%=listProducts[i].autor  %>  </p>
+                        <!-- <p>Genero: <%=books[i].genero  %> </p> -->
+                        <!-- <p>Autor: <%=books[i].autor  %>  </p> -->
+                        <p>genero x</p>
+                        <p>autor x</p>
                     </div>
                     <div class="descripcion">
-                        <p>Descripcion: <%=listProducts[i].descripcion  %> </p>
+                        <p>Descripcion: <%=books[i].description  %> </p>
                     </div>
                 </div>
                 <div class ="padre-valor">
                     <div class="valor">
-                        <p>Stock disponible: <%= listProducts[i].stock %> </p>
+                        <p>Stock disponible: <%= books[i].stock %> </p>
                     </div>
                     <div class="valor">
-                        <p>Precio: $ <%= listProducts[i].precio %> </p>
+                        <p>Precio: $ <%= books[i].price %> </p>
                     </div>
                 </div>
 

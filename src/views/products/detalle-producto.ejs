@@ -19,18 +19,18 @@
                         <img class="portada" src="/images/portadas/<%= product.portada %>">
                     </div>
                     <div class="detalles">
-                        <p class="tit-det"><%=  product.titulo %></p>
-                        <p> <%=  product.autor %></p>
-                        <p><%=  product.genero %></p>
+                        <p class="tit-det"><%=  product.title %></p>
+                        <p> <%=  product.autors_book.name %></p>
+                        <p><%=  product.genres_book.name %></p>
                         <!-- <p class="tit-det">Detalles</p> -->
                         <br>
-                        <p class="descripcion"><%=  product.descripcion %></p>
+                        <p class="descripcion"><%=  product.description %></p>
                     </div>
                     </div>
                     <div class="right-det">
                     <div class="precio">
                         <p class="price">Precio</p>
-                        <p class="price">$ <%=  product.precio %></p>
+                        <p class="price">$ <%=  product.price %></p>
                     </div>
                     <div class="cantidad">
                         <form action="/products/carrito">

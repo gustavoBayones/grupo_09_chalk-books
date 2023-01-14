@@ -20,12 +20,32 @@
                 <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del libro">
             </div>
             <div>
-                <label for="nombreAutor">Autor</label>
-                <input type="text" name="nombreAutor" id="nombreAutor" placeholder="Nombre del autor">
+                <label for="autors">Autor</label>
+                <select name="autors" id="autors">
+                    <% for( let i = 0; i < autors.length; i++ ) { %>
+                        <option value="<%= autors[i].id %> ">
+                            <%= autors[i].name %> 
+                        </option>
+                    <% } %>
+                </select>
             </div>
             <div>
-                <label for="genero">Autor</label>
-                <input type="text" name="genero" id="genero" placeholder="Genero">
+                <label for="genero">Genero</label>
+                <select name="genero" id="genero">
+                    <% for( let i = 0; i < generos.length; i++ ) { %>
+                        <option value="<%= generos[i].id %> ">
+                            <%= generos[i].name %> 
+                        </option>
+                    <% } %>
+                </select>
+            </div>
+            <div>
+                <label for="editorial">Editorial</label>
+                <input type="text" name="editorial" id="editorial" placeholder="Nombre de editorial">
+            </div>
+            <div>
+                <label for="publicacion">Año de publicacion</label>
+                <input type="number" name="published" id="publicacion">
             </div>
             <div class="descProduct">
                 <label for="descProducto">Detalles</label>
