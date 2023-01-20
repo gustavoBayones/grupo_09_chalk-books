@@ -1,122 +1,174 @@
-.titulo {
-background-color: black;
-color: white;
-font-family: 'Dancing Script', cursive;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f6f4;
+    margin:0px;
+    padding: 0;
 }
 
-.titulo p{
-    margin:auto;
+main{
+    margin-top: 60px;
+    padding: 20px 0px 80px 0px;
 }
 
-main {
-    height: 100vh;
-    background-image: url("/images/background-img.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+.present {
     display: flex;
-}
-
-.form-padre {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.13);
     flex-direction: column;
-    border-radius: 10px;
-    border: 1px solid grey;
-    margin:auto;
-}
-
-.formulario {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: 10px;
-    padding: 10px;
 }
 
-.formulario input {
-    margin: 10px;
+.present h4{
+    font-family: 'MV Boli', sans-serif;;
+}
+
+.fileUp {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileUp input[type=file]{
+    display:none;
+}
+.fileLab {
+    cursor: pointer;
+    border: 1px solid #1c1c1c;
+    margin-left: 10px;
+    padding: 25px;
+    border-radius: 5%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 151px;
+    justify-content: center;
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 14px;
+}
+.fileUp i{
+    color: black;
+}
+.name{
+    font-family: 'MV Boli', sans-serif;
+}
+
+.name p{
+    margin: 0px 0px 0px 0px;
+}
+
+.name input{
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+    
+}
+
+.iText{
+    font-family: 'MV Boli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.iText label {
+    width: 70%;
+}
+.iText input {
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+    width: 100%;
+}
+.iText p{
+    margin:0;
+}
+.error p {
+    color:red;
+    font-family: 'MV Boli' , 'sans-serif';
+    margin:0;
 }
 
 .legals {
-    font-size: 10px;
-    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.remember {
-    font-size: 10px;
-    color: white;
-    align-self: flex-start;
+.legals label {
+    display: flex;
 }
-
-.login {
-    margin-bottom: 5px;
-}
-
-.login a{
-    color: white;
-    text-decoration: none;
-
-}
-
-.login a:visited {
-    color: whitespace;
-}
-
-.input-texts {
-    font-family:"Fira Sans", serif;
-    font-style: italic;
-    background-color: rgba(54, 54, 54, 0.5);
-    border: 1px solid grey;
-    color: white;
-}
-
-.avatar {
-    font-family:"Fira Sans", serif;
-    font-style: italic;
-    color: white;
-    margin-bottom: 0;
-}
-
-.boton {
-    background-color: rgba(54, 54, 54, 0.9);
-    color: white;
-    font-family:"Fira Sans", serif;
-    font-style: italic;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;;
-    border-radius: 24px;
-    border-style: none;
-}
-.boton a{
-    text-decoration: none;
-    color: white;
-    font-family:"Fira Sans", serif;
-    font-style: italic;
-}
-
-.boton:hover {
-    background-color: rgb(37, 37, 37);
-}
-
-.link-term {
-    color:aliceblue;
-}
-
-.error p {
-    color: #ff6961;
-    margin: 0;
-    font-family: "roboto";
+.legals p {
+    font-family: 'Inter';
     font-size: 12px;
 }
-
-@media (min-width: 768px) {
-
+.botones{
+    display: flex;
+    margin: 5px 5px 15px 5px;
+    justify-content: space-around;
 }
+.buttom {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #ced4da;
+    box-shadow: 0 5px #adb5bd;
+    margin-top: 10px;
+  }
+  .buttom:hover {
+    box-shadow: 0 3px #adb5bd;
+    top: 1px;
+  }
+  .buttom:active {
+    box-shadow: 0 0 #adb5bd;
+    top: 5px;
+  }
+
+
+@media (min-width: 700px) {
+    .fileUp{
+        display: block;
+    }
+    .fileLab{
+        margin: auto;
+    }
+    .fullname {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .fullname label {
+        width: 70%;
+    }
+    .fullname input{
+        width: 100%;
+    }
+    label {
+        max-width: 500px;
+    }
+    .botones{
+        max-width: 700px;
+        margin:auto;
+    }
+    footer{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1000px){
+    main {
+        height: 100vh;
+    }
+}
+

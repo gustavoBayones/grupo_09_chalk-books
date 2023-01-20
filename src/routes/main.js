@@ -74,6 +74,8 @@ router.get("/user/profile/:id/editContra",authMiddle, userController.editContra)
 
 router.post("/user/profile/:id/editContra", userController.guardarEditContra)
 
+router.get("/user/listUsers", authMiddle, userController.listUsers)
+
 router.get("/user/logout", userController.logout)
 
 

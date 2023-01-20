@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/register.css">
-    <title>Chalk n' Books</title>
-    <header>
-        <div class="titulo"><p>Chalk n' Books</p></div>
-    </header>
-    <main>
-        <div class="form-padre">
-            <form class="formulario" action="/user/profile/<%=id%>/editContra" method="POST">
-                <label for=""><input class="input-texts" type="password" name="password" placeholder="Nueva Contraseña"></label>
-                <label for=""><input class="input-texts" type="password" name="coPassword" placeholder="Confirme Contraseña"></label>
-                <div class="botones">
-                    <button class="boton" type="submit">Editar</button>
-                    <button class="boton" ><a href="/">Cancelar</a></button>
-            </form>
-            </div>
 
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editContra.css">
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <div class="logo">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <h1>Cambiar Contraseña</h1>
+            <div class="formdiv">
+                <form action="" method="post">
+                    <div>
+                        <label for="Coan">Contraseña Antigua</label>
+                        <input type="password" name="" id="Coan">
+                    </div>
+                    <div class="newP">
+                        <label for="password">Nueva Contraseña</label>
+                        <input type="password" name="" id="password">
+                        <label for="coPass">Confirmar Contraseña</label>
+                        <input type="password" name="coPass" id="coPass">
+                    </div>
+                    <input type="submit" value="Cambiar Contraseña">
+                    <button href="/">Cancelar</button>
+                </form>
+            </div>
         </div>
     </main>
-</head>
-<body>
-    
+    <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>

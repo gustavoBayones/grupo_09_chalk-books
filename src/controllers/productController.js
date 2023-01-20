@@ -42,7 +42,10 @@ let productController = {
             portada: req.file.filename,
 
         })
-        res.redirect('/products')
+        .then(function(response){
+            res.redirect('/products')
+        })
+ 
 
         // console.log(req.body)            proceso viejo de guardado
         // if(req.file){
@@ -186,8 +189,10 @@ let productController = {
             where: {
                 id: req.params.id
             }
+        }).then(function(response){
+            res.redirect('/products')
         })
-        res.redirect('/products')
+ 
 
     },
 

@@ -3,51 +3,41 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/products.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-
     
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
-    <div class="agregarProd">
-        <form action="/products/crearProducto" method="get">
-            <input type="submit" value="Agregar Producto">
-        </form>
+    <main>  
+            <div class = "maindiv">
+            <!-- Start LOGO -->
+            <div class="logo-busqueda">
+                <div class="logoChalk">
+                    <img src="/images/chalkLogo.png" alt="">
+                </div>
+                <!-- Finish LOGO -->
+                <!-- Start Busqueda -->
+                <form action="" method="get" class="form-busqueda">
+                    <input type="text" name="busqueda" id="" placeholder="Busca por titulo o autor!">
+                </form>
+            </div>
+                <!-- Finish Busqueda -->
+                <h4 class="titlelib">Todos nuestros Libros!</h4>
+                <div class="agregarProd">
+                    <form action="/products/crearProducto" method="get">
+                        <input type="submit" value="Agregar Producto">
+                    </form>
+                </div>
+        <section class="catalog">
+            <% for(let i = 0; i < books.length ; i++) {%> 
+            <article>
+                <img src="/images/portadas/<%= books[i].portada %>" alt="">
+                <a href="/products/detalleProducto/<%= books[i].id %> "><%= books[i].title %> </a>
+            </article>
+            <% } %> 
+        </section>
     </div>
-    <div>
-        <% for(let i = 0; i < books.length ; i++) {%> 
-            <section>
-                <div class="image">
-                    <img src="/images/portadas/<%= books[i].portada %>">
-                </div>
-                <div>
-                    <div class="titulo">
-                        <a href="/products/detalleProducto/<%= books[i].id %> "><%= books[i].title %> </a>
-                    </div>
-                    <div class="genero">
-                        <!-- <p>Genero: <%=books[i].genero  %> </p> -->
-                        <!-- <p>Autor: <%=books[i].autor  %>  </p> -->
-                        <p>genero x</p>
-                        <p>autor x</p>
-                    </div>
-                    <div class="descripcion">
-                        <p>Descripcion: <%=books[i].description  %> </p>
-                    </div>
-                </div>
-                <div class ="padre-valor">
-                    <div class="valor">
-                        <p>Stock disponible: <%= books[i].stock %> </p>
-                    </div>
-                    <div class="valor">
-                        <p>Precio: $ <%= books[i].price %> </p>
-                    </div>
-                </div>
-
-            </section>
-        <% } %> 
-    </div>
-
     </main>
     <%- include('../partials/footer.ejs') %>
+
 </body>
+</html>

@@ -168,6 +168,10 @@ let userController = {
         res.redirect("/")
     },
 
+    listUsers: function(req,res){
+        res.render('users/listUser')
+    },
+
     logout: function(req, res) {
         res.clearCookie('emailUsuario')
         req.session.destroy()

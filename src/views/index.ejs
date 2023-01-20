@@ -1,46 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/partials.css">
+    <link rel="stylesheet" href="/css/chalk.css">
     <%- include('partials/head.ejs') %>
 </head>
+
 <body>
+        
     <%- include('partials/header.ejs') %>
     <main>
-        
-        <div class="banner">
-            <div class="slider-left"><</div>
-            <div class="contenido">Novedades</div>
-            <div class="slider-right">></div>
+        <!-- Start LOGO -->
+        <div class="logo-busqueda">
+            <div class="logoChalk">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <!-- Finish LOGO -->
+            <!-- Start Busqueda -->
+            <form action="" method="get" class="form-busqueda">
+                <input type="text" name="busqueda" id="" placeholder="Busca por titulo o autor!">
+            </form>
         </div>
-        <h2>DESTACADOS</h2>
-        <div class="productos-padre">
-        <section>
-            <div class="products">
-            <article>
-                <img class="portada"src="/images/harrypotter-niñomaldito.png" alt="Harry potter y el niño maldito libro">
-                <h4>Harry potter y el niño maldito</h4>
-            </article>
-            <article>
-                <img class="portada" src="/images/lordoftherings.jpg" alt="">
-                <h4>El Señor de los Anillos y el retorno del rey</h4>
-            </article>
+            <!-- Finish Busqueda -->
+            <div class="recomend">
+                <p>La recomendación de CHALKANDBOOKS!</p>
             </div>
-        </section>
-        <section>
-            <div class="products">
-            <article>
-                <img class="portada"src="/images/harrypotter-niñomaldito.png" alt="Harry potter y el niño maldito libro">
-                <h4>Harry potter y el niño maldito</h4>
-            </article>
-            <article>
-                <img class="portada" src="/images/lordoftherings.jpg" alt="">
-                <h4>El Señor de los Anillos y el retorno del rey</h4>
-            </article>
+        
+        <!-- Cards : -->
+        <div class = "cards">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
             </div>
-        </section>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
+            </div>
+        </div>
+        <div id= "ccard" class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="recomend">
+            <p>Estas buscando algo mas? Podes ver todos nuestros libros <a>AQUI</a></p>
         </div>
         <h3>Los 10 más leídos del MUNDO!</h3>
         <div class="contenedor">
@@ -69,31 +115,8 @@
                     <p class="descripcion-top10">Con el título de El diario de Ana Frank se conoce la edición de los diarios personales escritos por la niña judía Ana Frank (Annelies Marie Frank) entre el 12 de junio de 1942 y el 1 de agosto de 1944 en un total de tres cuadernos conservados a la actualidad, donde relata su historia como adolescente y el tiempo de dos años cuando tuvo que ocultarse de los nazis en Ámsterdam, durante la Segunda Guerra Mundial.</p>
                 </div>
             </section>
-            <section class="bannercitos">
-               <div class="promoImagen">
-                <img class="imagen" src="/images/Trilux.jpg" alt="promocion de lapiceras">
-               </div>
-               <div class="promoImagen">
-                <img class="imagen" src="/images/Embalaje.png" alt="">
-               </div>
-               <div class="promoImagen">
-                <img class="imagen" src="/images/enviochico.png" alt="">
-               </div>
-               <div class="promoImagen">
-                <img class="imagen" src="/images/Embalaje.png" alt="">
-               </div>
-               <div class="promoImagen">
-                <img class="imagen" src="/images/Trilux.jpg" alt="promocion de lapiceras">
-               </div>
-               <div class="promoImagen">
-                <img class="imagen" src="/images/enviochico.png" alt="">
-               </div>
-            </section>
-        </div>
-
     </main>
     <%- include('partials/footer.ejs') %>
-    
 </body>
 
 </html>

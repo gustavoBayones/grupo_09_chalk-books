@@ -1,40 +1,26 @@
-<header class="header">                                                                         <!-- Header segun el wireframe -->
-    <nav class="nav-bar-header">
-        <div class="burger-menu">
-            <i class="fa fa-bars burger 2x"></i>                                     <!-- Burguer menu -->
-        </div>
-        <div class="logo">
-            <p>Chalk n' Books</p><!-- Logo -->
-        </div>
-        <div class="nav-tools">                                                                 <!-- Iconos de usuario -->               
-            <ul>
-                <li><a href="/user/profile"><i class="icon fa-solid fa-circle-user"></i></a></li>
-                <li><a href="/carrito"><i class=" icon fa-solid fa-cart-shopping"></i></a></li>
-                <% if (locals.logged) { %>
-                <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-                <% } %>
+<header class="navbar-top">
+    <div class="burger-menu">
+        <input type="checkbox" name="" id="Open">
+        <label for="Open" class="sidebarIcon">
+        <div class="wrapper first"></div>
+        <div class="wrapper second"></div>
+        <div class="wrapper third"></div>
+        </label>
+        <div id="sidebarMenu">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Productos</a></li>
+                <li><a href="/user/listUsers">Lista De Usuarios</a></li>
+                <li><a href="/">Contacto</a></li>
+                <li><a href="/products/carrito">Carrito</a></li>
             </ul>
         </div>
-    </nav>
-    <div class="buscador">
-    <div class="buscar">
-        <input type="search" class="barra-busqueda" placeholder="Realiza tu busqueda!">
-        <i class="fa-solid fa-magnifying-glass"></i>
     </div>
+    <div class="icons-navbar">
+        <a href="/user/profile"><i class="fa-regular fa-user"></i></a>
+        <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <% if (locals.logged) { %>
+        <a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+        <% } %> 
     </div>
-   
-    <div>
-    <nav>
-        <ul class="nav-bar">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/products">Productos</a></li>
-            <!--<li><a href="#">Novedades</a></li>
-            <li><a href="#">Mas Vendidos</a></li>
-            <li><a href="#">Comics</a></li>-->
-            <li><a href="#">Sucursales</a></li> 
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    </div>
-    
 </header>

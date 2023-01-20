@@ -1,77 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/normalize.css">
+
     <link rel="stylesheet" href="/css/carrito.css">
+    <%- include('../partials/head.ejs') %>
 </head>
-<body>
-    <%- include('../partials/header.ejs') %>
-    <main>
-        <div>
-            <h2>Carrito</h2>
-            <section>
-                <article class="producto">
-                    <div class="img-det">
-                    <div>
-                        <img class="portada" src="/images/harrypotter-niñomaldito.png" alt="">
-                    </div>
-                    <div class="detalles">
-                        <p class="tit-det">Titulo</p>
-                        <p class="tit-det">Detalles</p>
-                        <p class="descripcion">Aca va la descripcion del libro</p>
-                    </div>
-                    </div>
-                    <div class="right-det">
-                    <div class="precio">
-                        <p class="price">Precio</p>
-                        <p class="price">$ xxxx</p>
-                    </div>
-                    <div class="cantidad">
-                        <form action="GET">
-                            <p class="tit-det">Cantidad
-                            </p>
-                            <input type="number" name="cant" id="" >
-                        </form>
-                    </div>
-                    
-                    </div>
-                </article>
-                <article class="producto">
-                    <div class="img-det">
-                    <div>
-                        <img class="portada" src="/images/lordoftherings.jpg" alt="">
-                    </div> 
-                    <div class="detalles">
-                        <p class="tit-det">Titulo</p>
-                        <p class="tit-det">Detalles</p>
-                        <p class="descripcion">Aca va la descripcion del libro</p>
-                    </div>
-                    </div>
-                    <div class="right-det">
-                    <div class="precio">
-                        <p class="price">Precio</p>
-                        <p class="price">$ xxxx</p>
-                    </div>
-                    <div class="cantidad">
-                        <form action="GET">
-                            <p class="tit-det">Cantidad
-                            </p>
-                            <input type="number" name="cant" id="">
-                        </form>
-                    </div>
-                    </div>
-                </article>
-                <div class="pricetot">
-                    <p>Total: $ xxxx</p>
-                    <div class="buttons">
-                        <button class="seguir">Seguir Comprando</button>
-                        <button class="comprar">Comprar</button>
-                    </div>
+<%- include('../partials/header.ejs') %>
+
+    <body>
+        <main>
+            <div class="maindiv">
+                <div class="logo">
+                    <img src="/images/chalkLogo.png" alt="">
                 </div>
-            </section>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
+                <div class="wrapper-tit"></div>
+                <div class="carrito-tit">
+                    <h1>Mi Carrito</h1>
+                </div>
+                <section>
+                    <article>
+                        <div class="imagen-titulo">
+                            <img src="./images/harryp.png" alt="">
+                            <div class="titulo-precio">
+                                <p>Titulo</p>
+                                <p class="price">$Precio</p>
+                            </div>
+                        </div>
+                        <div class="wrapper-ver"></div>
+                        <div class="cantidad">
+                            <form action="" method="post">
+                                <label for="">Cantidad
+                                    <select name="" id="">
+                                        <option value="1">1</option>
+                                        <option value="1">2</option>
+                                    </select>
+                                </label>
+                            </form>
+                        </div>
+                    </article>
+                    <div class="wrapper-hor"></div>
+                </section>
+                <div class="total">
+                    <p>Total: $</p>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+
 </html>

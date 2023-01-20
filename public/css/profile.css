@@ -1,87 +1,58 @@
-main{
-    background-color: whitesmoke;
+* {
+    box-sizing: border-box;
 }
-
-main img {
-    height: 30vw;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 5%;
+body {
+    margin:0 ;
+    padding:0;
+    background-color:  #f3f6f4;
 }
-
-p {
-    margin: 7px;
+.maindiv{
+    margin: 15px;
 }
-
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.avatar img {
+    height: 150px;
+    border-radius: 50%;
+}
+h1{
+    font-family: 'MV Boli', 'sans-serif';
+    border-bottom: 1px dotted #80808042;
+}
 .profile {
     display:flex;
-    padding: 2% 2% 2% 0;
+    justify-content: space-between;
+    flex-direction: column;
 }
-
+.avatar-info{
+    display: flex;
+}
+.informacion {
+    margin-left: 15px;
+    font-family: 'Inter';
+}
 .botones {
-    display:flex;
+    border-top: 1px dotted #80808042;
 }
-
-.buttom {
-    background-color: rgb(0, 189, 0);
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    box-shadow: 1px 1px 1px rgb(0 0 0 / 23%);
-    width: 64px;
+.botones button {
+    border: 1px solid rgb(18 170 18 / 82%);
+    padding: 5px 8px 5px 8px;
+    box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
 }
-
-.buttom-contra{
-    background-color: rgb(0, 189, 0);
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    box-shadow: 1px 1px 1px rgb(0 0 0 / 23%);
-    width: 192px;
-}
-
-.info{
-    width: 50vw;
-}
-
-.dato{
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.tipo{
-    font-size: 15px;
-    text-decoration: underline solid;
-    font-family: 'Roboto', sans-serif;
-}
-
-form{
-    padding: 10px;
-    text-align: end;
-}
-
-@media (min-width: 700px) {
-main img {
-    max-width: 200px;
-    max-height: 200px;
-}
-
-.dato{
-    font-size: 15px;
-}
-
-.tipo{
-    font-size: 20px;
-    text-decoration: underline solid;
-}
-
-.botones {
-    flex-direction:row-reverse;
-}
-
-main {
-    height: 500px;
-}
+@media (min-width: 900px) {
+    .maindiv{
+        margin: 0 25vw 0px 25vw;
+        background-color: #f3f6f4;
+        /* box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px; */
+        box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -webkit-box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
+        padding: 15px;
+        height: 100vh;
+    }
 }

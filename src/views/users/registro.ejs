@@ -1,65 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/register.css">
-    <title>Chalk n' Books</title>
+        <link rel="stylesheet" href="/css/register.css">
+        <%- include('../partials/head.ejs') %>
+
 </head>
+
 <body>
-    <header>
-        <div class="titulo"><p>Chalk n' Books</p></div>
-    </header>
-    <main>
-        <div class="form-padre">
-            <form class="formulario" action="/user/register" method="POST" enctype="multipart/form-data"> <!-- CAMPOS nombre, apellido , email , password, copassword, terms  -->
-                <label for=""><input class="input-texts" type="text" name="nombre" placeholder="Nombre" value= "<% if (locals.data) { %><%=data.nombre%><% } %>" ></label>
-                
-                    <% if (locals.errors && errors.nombre) { %>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <div class="present">
+                <img src="./chalkLogo.png" alt="">
+                <h4>
+                    ÚNETE A CHALK AND BOOKS!
+                </h4>
+            </div>
+            <form action="" method="post">
+                <div class="fileUp">
+                    <label class="fileLab" for="fileUp">
+                        Subi tu avatar!
+                        <i class="fa-solid fa-camera"></i>
+                        <input type="file" name="avatar" id="fileUp">
+                    </label>
+                    <% if (locals.errors && errors.avatar) { %>
                         <div class="error">
-                        <p><%= errors.nombre.msg %> </p>
+                        <p><%= errors.avatar.msg %> </p>
                         </div>
                     <% } %>
-                
-                <label for=""><input class="input-texts" type="text" name="apellido" placeholder="Apellido"value= "<% if (locals.data) { %><%=data.apellido%><% } %>"></label>
-                <% if (locals.errors && errors.apellido) { %>
-                    <div class="error">
-                    <p><%= errors.apellido.msg %> </p>
+                    <div class="fullname">
+                        <label for="" class="name">
+                            <p>Nombre</p>
+                            <input type="text" name="nombre" id=""
+                                value="<% if (locals.data) { %><%=data.nombre%><% } %>">
+                        </label>
+
+                        <% if (locals.errors && errors.nombre) { %>
+                            <div class="error">
+                                <p>
+                                    <%= errors.nombre.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <label for="" class="name">
+                                    <p>Apellido</p>
+                                    <input type="text" name="apellido" id="" value= "<% if (locals.data) { %><%=data.apellido%><% } %>"></label>
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <div class="error">
+                                        <p><%= errors.apellido.msg %> </p>
+                                        </div>
+                                    <% } %>
                     </div>
-                <% } %>
-                <label for=""><input class="input-texts" type="email" name="email" placeholder="Email"value= "<% if (locals.data) { %><%= data.email %><% } %>"></label>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="error">
-                    <p><%= errors.email.msg %> </p>
-                    </div>
-                <% } %>
-                <label for=""><input class="input-texts" type="password" name="password" placeholder="Contraseña"></label>
-                <% if (locals.errors && errors.password) { %>
-                    <div class="error">
-                    <p><%= errors.password.msg %> </p>
-                    </div>
-                <% } %>
-                <label for=""><input class="input-texts" type="password" name="copassword" placeholder="Confirmar Contraseña"></label>
-                <p class="avatar">Avatar</p>
-                <label for=""><input class="input-texts" type="file" name="avatar"></label>
-                <% if (locals.errors && errors.avatar) { %>
-                    <div class="error">
-                    <p><%= errors.avatar.msg %> </p>
-                    </div>
-                <% } %>
-                <label class="legals" for=""><input type="checkbox" name="terms" required>Acepto los <a class="link-term" href="https://www.youtube.com/watch?v=mCdA4bJAGGk">Terminos y condiciones</a> de Chalk n' Books</label>
+                </div>
+                <div class="iText">
+                    <label for="email">
+                        <p>Email</p>
+                        <input type="text" name="email" id="email"value= "<% if (locals.data) { %><%= data.email %><% } %>"></label>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error">
+                            <p><%= errors.email.msg %> </p>
+                            </div>
+                        <% } %>
+                </div>
+                <div class="iText">
+                    <label for="password">
+                        <p>Contraseña</p>
+                        <input type="text" name="password" id="password">
+                    </label>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="error">
+                        <p><%= errors.password.msg %> </p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="iText">
+                    <label for="copassword">
+                        <p>Confirmar contraseña</p>
+                        <input type="text" name="copassword" id="copassword">
+                    </label>
+                </div>
+                <div class="legals">
+                    <label for="">
+                        <input type="checkbox" name="terms" id="" required>
+                        <p>Aceptas los terminos y condiciones de ChalkAndBooks</p>
+                    </label>
+                </div>
                 <div class="botones">
-                <button class="boton" type="submit">Registrarse</button>
-                <button class="boton" type="reset">Borrar</button>
+                    <input type="submit" value="Registrarse" class="buttom">
+                    <input type="reset" value="Borrar" class="buttom">
+                </div>
             </form>
-            </div>
-            <div class ="login"><a href="/user/login">¿Ya tienes una Cuenta?</a></div>
-        </div>
-    </main>
+        </main>
+        <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>

@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/register.css">
-    <title>Chalk n' Books</title>
-    <header>
-        <div class="titulo"><p>Chalk n' Books</p></div>
-    </header>
+
+    <link rel="stylesheet" href="/css/login.css">
+    <%- include('../partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
     <main>
-        <div class="form-padre">
-            <form class="formulario" action="/user/login" method="POST">
-                <label for=""><input class="input-texts" type="text" name="email" placeholder="Email"></label>
+        <div class="logo-titulo">
+            <img src="/images/chalkLogo.png" alt="logo de chalk and books">
+            <h1>
+                Ingresá en Chalk And Books!
+            </h1>
+        </div>
+        <div>
+            <form action="" method="post">
+                <label class="name"  for="">
+                    <p>Email</p>
+                    <input type="text" name="email" id="">
+                </label>
                 <% if (locals.errors && errors.email) { %>
                     <div class="error">
                     <p><%= errors.email.msg %> </p>
                     </div>
                 <% } %>
-                <label for=""><input class="input-texts" type="password" name="password" placeholder="Contraseña"></label>
-                <label class="remember" for=""><input type="checkbox" name="remember">Recordar usuario</label>
-                <div class="botones">
-                <button class="boton" type="submit">Ingresar</button>
+                <label class="name"  for="">
+                    <p>Contraseña</p>
+                    <input type="text" name="password" id="">
+                </label class="name" >
+                <div class="boton">
+                    <input type="submit" value="Ingresá" class="buttom">
+                </div>
             </form>
+            <div class="help">
+                <a href="/user/register">¿No tienes una cuenta?</a>
+                <a href="#">¿Olvidaste tu contraseña?</a>
             </div>
-            <div class ="login"><a href="/user/register">¿No tienes una Cuenta?</a></div>
         </div>
     </main>
-</head>
-<body>
-    
+    <%- include('../partials/footer.ejs') %>
 </body>
-</html>

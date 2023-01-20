@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
+
     <link rel="stylesheet" href="/css/register.css">
-    <title>Chalk n' Books</title>
+    <%- include('../partials/head.ejs') %>
 </head>
+
 <body>
-    <header>
-        <div class="titulo"><p>Chalk n' Books</p></div>
-    </header>
+    <%- include('../partials/header.ejs') %>
     <main>
-        <div class="form-padre">
-            <form class="formulario" action="/user/profile/<%= user.id %>/editProfile " method="POST" enctype="multipart/form-data">
-                <label for=""><input class="input-texts" type="text" name="nombre" value="<%= user.nombre %> "></label>
-                <label for=""><input class="input-texts" type="text" name="apellido" value="<%= user.apellido %> "></label>
-                <label for=""><input class="input-texts" type="email" name="email" value="<%= user.email %> "></label>
-                <p class="avatar">Avatar</p>
-                <label for=""><input class="input-texts" type="file" name="avatar"></label>
-                <div class="botones">
-                <button class="boton" type="submit">Editar</button>
-                <button class="boton" ><a href="/">Cancelar</a></button>
-                
-            </form>
-            </div>
+        <div class="present">
+            <img src="./chalkLogo.png" alt="">
+            <h4>
+                EDITAR USUARIO!
+            </h4>
         </div>
+        <form class="formulario" action="/user/profile/<%= user.id %>/editProfile " method="POST" enctype="multipart/form-data">
+            <div class="fileUp">
+                <label class="fileLab" for="fileUp">
+                    Subi tu avatar!
+                    <i class="fa-solid fa-camera"></i>
+                    <input type="file" name="avatar" id="fileUp">
+                </label>
+                <div class="fullname">
+                    <label for="" class="name">
+                        <p>Nombre</p>
+                        <input type="text" name="nombre" id="" value="<%= user.nombre %>">
+                    </label>
+                    <label for="" class="name">
+                        <p>Apellido</p>
+                        <input type="text" name="apellido" id="" value="<%= user.apellido %>">
+                    </label>
+                </div>
+            </div>
+            <div class="iText">
+                <label for="email">
+                    <p>Email</p>
+                    <input type="text" name="email" id="email" value="<%= user.email %>">
+                </label>
+            </div>
+            <div class="botones">
+                <input type="submit" value="Editar" class="buttom">
+                <input type="reset" value="Borrar Usuario" class="buttom">
+            </div>
+        </form>
     </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>

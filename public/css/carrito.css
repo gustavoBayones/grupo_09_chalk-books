@@ -1,96 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-*{
+* {
     box-sizing: border-box;
-    margin:0;
+}
+.imagen-titulo img{
+    height: 100px;
+    margin-right: 15px;
+
+}
+
+section article {
+    display: flex;
+    margin: 15px;
+    justify-content: space-between;
+    font-family: 'Inter';
+}
+.price{
+    color:rgb(20, 150, 20);
+    font-weight: bold;
+}
+body {
+    background-color: #f3f6f4;
+    margin:0px;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
 }
-
-main {
-    background-color: whitesmoke;
-}
-
-.portada {
-    width: 20vw;
-}
-
-.producto {
+.imagen-titulo{
     display: flex;
-    font-size: 15px;
-    justify-content: space-between;
-    margin: 5px;
-    border-bottom: 1px solid grey;
+    align-items: flex-start;
 }
-
-.cantidad input{
-    width: 30px;
+h1 {
+    text-align: center;
+    font-family: 'MV Boli', 'san-serif';
 }
-
-.img-det {
+.logo{
     display: flex;
-    width: 70vw;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}  
+.logo img {
+    margin-top: 15px;
 }
-
-.tit-det {
-    font-size: 15px;
+.wrapper-tit {
+    border-top: 1px solid #80808042;
+    margin: 0 15px 0 15px;
 }
-
-.descripcion {
-    font-size: 12px;
+.wrapper-ver{
+    border-right: 1px solid #80808042;
 }
-
-.detalles {
-    margin-left: 5px;
+.wrapper-hor{
+    border-bottom: 1px dotted #80808042;
+    margin: 0 15px 0 15px;
 }
-
-.right-det {
-    display: flex;
+.total {
+    margin: 15px;
+    font-family: 'Inter';
 }
-
-.price {
-    font-size: 15px;
+@media(min-width:700px){
+    .wrapper-ver {
+        display: none;
+    }
 }
-
-.precio {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-}
-
-.cantidad {
-    display: flex;
-    padding: 5px;
-    flex-direction: column;
-}
-
-.pricetot {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
-    padding: 5px;
-}
-
-.pricetot p {
-    align-self: flex-end;
-}
-
-.seguir {
-    border: none;
-    border-radius: 20px;
-    font-size: 15px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    padding: 3px;
-    background-color: grey;
-    color:whitesmoke;
-}
-
-.comprar {
-    border: none;
-    border-radius: 20px;
-    font-size: 15px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    padding: 3px;
-    background-color: grey;
-    color:whitesmoke;
+@media(min-width:900px){
+    .maindiv{
+        margin: 0 25vw 0px 25vw;
+        background-color: #f3f6f4;
+        /* box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px; */
+        box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -webkit-box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
+        height: 80vh;
+    }
 }

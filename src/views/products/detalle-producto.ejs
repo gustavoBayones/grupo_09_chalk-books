@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/detalleProducto.css">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
 
-    
 </head>
+
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-        <div>
-            <h2>Detalle del producto</h2>
+        <div class="maindiv">
+        <div class="container">
+            <div class="portada">
+                <img src="/images/portadas/<%= product.portada %>" alt="">
+            </div>
+            <div>
+                <h1><%=  product.title %></h1>
+                <div class="first-container">
+                    <p class="precio">$<%=  product.price %>
+                    </p>
+                    <div class="info">
+                        <p>Autor:<%=  product.autors_book.name %></p>
+                        <p>Editorial: <%=product.editorial%></p>
+                        <p>Genero: <%=  product.genres_book.name %></p>
+                        <p>Publicado: <%=product.published%></p>
+                    </div>
+                    <p class="descripcion"><%=  product.description %></p>
+                </div>
+                <div class="cantidad">
+                    <form action="" method="post">
+                        <label class="stock" for="">
+                            <p>Cantidad</p>
+                            <input class="inputNumber" type="number">
+                        </label>
+                        <div class="containerBoton">
+                            <input class="boton" type="button" value="Agregar al carrito">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="containerEdit">
+            <form class="edit" action="/products/detalleProducto/<%= product.id %>/edit" >
+                <input type="submit" value="Editar Producto">
+            </form>
+        </div>
+        <div class="relacionados">
+            <h2>Productos Relacionados:</h2>
             <section>
-                <article class="producto">
-                    <div class="img-det">
-                    <div>
-                        <img class="portada" src="/images/portadas/<%= product.portada %>">
-                    </div>
-                    <div class="detalles">
-                        <p class="tit-det"><%=  product.title %></p>
-                        <p> <%=  product.autors_book.name %></p>
-                        <p><%=  product.genres_book.name %></p>
-                        <!-- <p class="tit-det">Detalles</p> -->
-                        <br>
-                        <p class="descripcion"><%=  product.description %></p>
-                    </div>
-                    </div>
-                    <div class="right-det">
-                    <div class="precio">
-                        <p class="price">Precio</p>
-                        <p class="price">$ <%=  product.price %></p>
-                    </div>
-                    <div class="cantidad">
-                        <form action="/products/carrito">
-                            <p class="tit-det">
-                                Cantidad
-                            </p>
-                                <input type="number" name="cant" id="" placeholder="                  - 1 +" >
-                                <input type="submit" value="Agregar al carrito">
-
-                        </form>
-                        <form class="edit" action="/products/detalleProducto/<%= product.id %>/edit ">
-                            <input type="submit" value="Editar Producto">
-                        </form>
-                    </div>
-                
-                    </div>
+                <article>
+                    <img src="./harryp.png" alt="">
+                </article>
+                <article>
+                    <img src="./harryp.png" alt="">
+                </article>
+                <article>
+                    <img src="./harryp.png" alt="">
                 </article>
             </section>
+        </div>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>
