@@ -16,7 +16,7 @@
                     ÚNETE A CHALK AND BOOKS!
                 </h4>
             </div>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="fileUp">
                     <label class="fileLab" for="fileUp">
                         Subi tu avatar!
@@ -65,7 +65,7 @@
                 <div class="iText">
                     <label for="password">
                         <p>Contraseña</p>
-                        <input type="text" name="password" id="password">
+                        <input type="password" name="password" id="password">
                     </label>
                     <% if (locals.errors && errors.password) { %>
                         <div class="error">
@@ -76,7 +76,7 @@
                 <div class="iText">
                     <label for="copassword">
                         <p>Confirmar contraseña</p>
-                        <input type="text" name="copassword" id="copassword">
+                        <input type="password" name="copassword" id="copassword">
                     </label>
                 </div>
                 <div class="legals">

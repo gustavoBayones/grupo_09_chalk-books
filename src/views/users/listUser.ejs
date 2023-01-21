@@ -17,39 +17,28 @@
             </div>
             <div class="lista-user">
                 <ul>
+                    <% for(let i = 0; i < users.length ; i++) {%> 
                     <li>
-                        <img src="/images/avatar/default.png" alt="">
-                        <p>Email</p>
-                        <p>Nombre y Apellido</p>
-                        <p>Rol</p>
+                        <img src="/images/avatar/<%= users[i].avatar %>" alt="">
+                        <p class="email"><%= users[i].email %></p>
+                        <p class="nombre"><%= users[i].nombre%> <%= users[i].apellido %></p>
+                        <p class="rol"><%= users[i].rol_user.name%></p>
                         <div class="icons">
-                            <i class="fa-solid fa-key"></i>
-                            <i class="fa-solid fa-gear"></i>
-                            <i class="fa-solid fa-trash"></i>
+                            <form action="/user/editpassAdmin" method="get">
+                            <label for="password"><i class="fa-solid fa-key"></i></label>
+                            <input type="submit" value="" id="password">
+                            </form>
+                            <form action="/user/editUserAdmin" method="get">
+                                <label for="edit"><i class="fa-solid fa-gear"></i></label>
+                                <input type="submit" value="" id="edit">
+                            </form>
+                            <form action="/user/destroyUserAdmin" method="post">
+                            <label for="delete"><i class="fa-solid fa-trash"></i></label>
+                            <input type="submit" value="" id="delete">
+                            </form>
                         </div>
                     </li>
-                    <li>
-                        <img src="/images/avatar/default.png" alt="">
-                        <p>Email</p>
-                        <p>Nombre y Apellido</p>
-                        <p>Rol</p>
-                        <div class="icons">
-                            <i class="fa-solid fa-key"></i>
-                            <i class="fa-solid fa-gear"></i>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/avatar/default.png" alt="">
-                        <p>Email</p>
-                        <p>Nombre y Apellido</p>
-                        <p>Rol</p>
-                        <div class="icons">
-                            <i class="fa-solid fa-key"></i>
-                            <i class="fa-solid fa-gear"></i>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </li>
+                    <% } %> 
                 </ul>
             </div>
         </div>

@@ -6,9 +6,6 @@ body {
     padding: 0;
     background-color: #f3f6f4;
 }
-main{
-    height: 90vh;
-}
 .logo-tit{
     margin: 15px;
 }
@@ -19,6 +16,7 @@ main{
 .lista-user img {
     height: 70px;
     display: none;
+    max-width: 65px;
 }
 .lista-user ul{
     margin:15px;
@@ -50,12 +48,48 @@ h1 {
     text-align: center;
     font-family: 'Inter';
 }
+.email {
+ width: 50%;
+}
+.nombre {
+    width: 30%;
+}
+.rol {
+    width: 12.5%;
+}
+.icons{
+    width: 7.5%;
+}
+#password , #edit , #delete{
+    display: none;
+}
+label {
+    cursor: pointer;
+}
+@media(min-width: 500px){
+    .email{
+        width: 40%;
+    }
+    .rol{
+        width: 15%;
+    }
+    .icons {
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+}
 @media( min-width: 700px ){
     .lista-user img {
         display: block;
+        margin-right: 5px;
     }
     .lista-user li{
         max-width: 900px;
         font-size: 15px;
+    }
+    p{
+        text-align: center;
     }
 }

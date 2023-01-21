@@ -1,8 +1,9 @@
 const path = require('path')
 const fs = require('fs');
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const db = require("../database/models")
 
 
 
@@ -19,7 +20,15 @@ let userController = {
     },
 
     loginProcess: function(req,res){
-        let userToLogin = User.findByField('email', req.body.email);
+        db.user.findAll({
+            where: {
+              email : req.body.email
+            }
+          })
+          .then(function(user){
+            let userToLogin = user[0].dataValues
+            //console.log(userToLogin.password)      
+        //let userToLogin = User.findByField('email', req.body.email);
         if(!userToLogin){
             return res.render('users/login', {
                 errors : {
@@ -31,12 +40,12 @@ let userController = {
         }
 
         if(userToLogin){
-            let passwordCompare = bcrypt.compareSync( req.body.password, userToLogin.password ); //lautaro
+            let passwordCompare = bcryptjs.compareSync( req.body.password, userToLogin.password ); //lautaro
             if(passwordCompare) {
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
                 if(req.body.remember){
-                    res.cookie( 'emailUsuario' , req.body.email , { maxAge : ((1000*60) * 1800)} )
+                    res.cookie( 'idUser' , req.session.userLogged.id , { maxAge : ((1000*60) * 1800)} )
                 }
                 
                 res.redirect('/')
@@ -50,6 +59,7 @@ let userController = {
                 })
             }
         }
+    })
     },
 
 
@@ -58,29 +68,48 @@ let userController = {
     },
 
     guardarUsuario: function(req,res){
-        const resultValidation = validationResult(req)
-        if(resultValidation.errors.length > 0){
-            return res.render('users/registro', {
-                errors: resultValidation.mapped(),
-                data: req.body
+        // const resultValidation = validationResult(req)
+        // if(resultValidation.errors.length > 0){
+        //     return res.render('users/registro', {
+        //         errors: resultValidation.mapped(),
+        //         data: req.body
+        //     })
+        // }
+
+        // let userInDB = User.findByField('email', req.body.email)
+        // if (userInDB){
+        //     return res.render('users/registro', {
+        //         errors: {
+        //             email: {
+        //                 msg: 'Este email ya está registrado'
+        //             }
+        //         },
+        //         data: req.body
+        //     })
+        // }
+
+        // User.create(req)
+        // console.log(req.file)
+        if(req.file){
+        db.user.create({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            rol_id: 2,
+            avatar: req.file.filename
+        })
+        }else{
+            db.user.create({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                rol_id: 2,
+                avatar: "default.png"
             })
         }
-
-        let userInDB = User.findByField('email', req.body.email)
-        if (userInDB){
-            return res.render('users/registro', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                data: req.body
-            })
-        }
-
-        User.create(req)
-        
-        res.redirect('/');
+        res.redirect('/user/login');
         /*let newUser = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
@@ -115,37 +144,73 @@ let userController = {
         let listUsers = JSON.parse(newListUsers)
         let user = listUsers[id]*/
 
+        db.user.findByPk(req.session.userLogged.id)
+        .then(function(users){
+            console.log(users)
+            res.render('users/profile', {user: users})
+        })
 
-
-        res.render('users/profile', {user: req.session.userLogged})
+        
     },
 
     editProfile: function(req,res){
-        console.log(req.session.userLogged)
-        /*let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
-        let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]*/
-        res.render('users/editProfile', {user: req.session.userLogged})
+        db.user.findByPk(req.session.userLogged.id)
+        .then(function(response){
+            res.render('users/editProfile', {user: response})
+        })
     },
     guardarEditProfile: function(req,res){
-        let id = req.session.userLogged.id
-        let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
-        let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]
-        user.nombre = req.body.nombre;
-        user.apellido = req.body.apellido;
-        user.email = req.body.email;
-        if(req.file)                                //Comprobamos si se subio una imagen, sino dejamos por defecto
-        {
-            user.avatar = req.file.filename
+        // let id = req.session.userLogged.id
+        // let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
+        // let listUsers = JSON.parse(newListUsers)
+        // let user = listUsers[id]
+        // user.nombre = req.body.nombre;
+        // user.apellido = req.body.apellido;
+        // user.email = req.body.email;
+        // if(req.file)                                //Comprobamos si se subio una imagen, sino dejamos por defecto
+        // {
+        //     user.avatar = req.file.filename
+        // }
+        // else{
+        //     user.avatar = req.session.userLogged.avatar
+        // }
+        // listUsers[id] = user;
+        // let userJSON = JSON.stringify(listUsers)
+        // fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
+        // res.redirect("/")
+        console.log(req.session)
+        console.log(req.body.nombre)
+        
+        if(req.file){
+            db.user.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                avatar: req.file.filename
+            } , {
+                where : {
+                    id: req.session.userLogged.id
+                }
+            })
+            .then(function(response){
+                res.redirect("/user/profile")
+            })
+        } else {
+            db.user.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                avatar: req.session.userLogged.avatar
+            } , {
+                where : {
+                    id: req.session.userLogged.id
+                }
+            })
+            .then(function(response){
+                res.redirect("/user/profile")
+            })
         }
-        else{
-            user.avatar = req.session.userLogged.avatar
-        }
-        listUsers[id] = user;
-        let userJSON = JSON.stringify(listUsers)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
-        res.redirect("/")
+        console.log(req.session.userLogged)
     },
 
     editContra: function(req,res){
@@ -155,21 +220,24 @@ let userController = {
     },
 
     guardarEditContra: function(req,res){
-        console.log(req.params.id)
-        console.log(req.body) 
-        let id = req.session.userLogged.id
-        let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
-        let listUsers = JSON.parse(newListUsers)
-        let user = listUsers[id]
-        console.log(user.password)
-        user.password = bcrypt.hashSync(req.body.password, 10)
-        listUsers[id] = user
-        fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
-        res.redirect("/")
+        console.log(req.body.password)
+        db.user.update({
+            password: bcryptjs.hashSync(req.body.password, 10)
+        } , {
+            where : { id : req.session.userLogged.id}
+        })
+        res.redirect('/user/profile')
     },
 
     listUsers: function(req,res){
-        res.render('users/listUser')
+        db.user.findAll({
+            include: [{association: "rol_user"}]
+        })
+        .then(function(users){
+            console.log(users)
+            res.render('users/listUser' , {users: users})
+        })
+        
     },
 
     logout: function(req, res) {

@@ -1,11 +1,11 @@
-const User = require('../models/User');
+const db = require("../database/models")
 
 
 function loggedViewMiddle (req,res,next ){
     res.locals.logged = false;
     if(req.cookies.emailUsuario){
-    let emailInCookie = req.cookies.emailUsuario
-    let userFromCookie = User.findByField('email', emailInCookie);
+    let idInCookie = req.cookies.idUser
+    let userFromCookie = db.user.findByPk(idInCookie)
     if(userFromCookie){
         req.session.userLogged = userFromCookie;
     }

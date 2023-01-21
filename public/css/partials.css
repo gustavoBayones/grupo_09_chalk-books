@@ -88,6 +88,7 @@
     flex-direction: row;
     align-content: center;
     align-items: center;
+    margin-right: 50px;
 }
 
 .burger-menu{
@@ -101,8 +102,10 @@
 
 .icons-navbar i{
     color: white;
-    padding-right: 5vw;
     align-self: center;
+}
+.icons-navbar a{
+    margin: 0 20px 0 20px;
 }
 main{
     margin-top: 55px;
