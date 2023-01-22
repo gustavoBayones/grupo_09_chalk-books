@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="/css/register.css">
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <% if (locals.admin) { %>
+         
+        
+        <div class="present">
+            <img src="./chalkLogo.png" alt="">
+            <h4>
+                EDITAR USUARIO!
+            </h4>
+        </div>
+        <form class="formulario" action="/user/profile/<%= user.id %>/editProfile " method="POST" enctype="multipart/form-data">
+            <div class="fileUp">
+                <label class="fileLab" for="fileUp">
+                    Subi tu avatar!
+                    <i class="fa-solid fa-camera"></i>
+                    <input type="file" name="avatar" id="fileUp">
+                </label>
+                <div class="fullname">
+                    <label for="" class="name">
+                        <p>Nombre</p>
+                        <input type="text" name="nombre" id="" value="<%= user.nombre %>">
+                    </label>
+                    <label for="" class="name">
+                        <p>Apellido</p>
+                        <input type="text" name="apellido" id="" value="<%= user.apellido %>">
+                    </label>
+                </div>
+            </div>
+            <div class="iText">
+                <label for="email">
+                    <p>Email</p>
+                    <input type="text" name="email" id="email" value="<%= user.email %>">
+                </label>
+            </div>
+            <div class="iText">
+                <label for="email">
+                    <p>Rol</p>
+                    <select name="rol_id" id="email">
+                        <option value="1">Admin</option>
+                        <option value="2">Viewer</option>
+                    </select>
+                </label>
+            </div>
+            <div class="botones">
+                <input type="submit" value="Editar" class="buttom">
+                <input type="reset" value="Borrar Usuario" class="buttom">
+            </div>
+        </form>
+        <% } else {%>
+            <h1>Upss..</h1>
+            <% } %> 
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

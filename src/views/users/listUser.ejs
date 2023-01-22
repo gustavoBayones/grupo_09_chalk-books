@@ -25,15 +25,9 @@
                             <p class="nombre"><%= users[i].nombre%> <%= users[i].apellido %></p>
                             <p class="rol"><%= users[i].rol_user.name%></p>
                             <div class="icons">
-                                <form action="/user/editpassAdmin" method="get">
-                                <label for="password"><i class="fa-solid fa-key"></i></label>
-                                <input type="submit" value="" id="password">
-                                </form>
-                                <form action="/user/editUserAdmin" method="get">
-                                    <label for="edit"><i class="fa-solid fa-gear"></i></label>
-                                    <input type="submit" value="" id="edit">
-                                </form>
-                                <form action="/user/destroyUserAdmin" method="post">
+                                    <a href="/user/editPassword/<%= users[i].id %>"><i class="fa-solid fa-key"></i></a>
+                                    <a href="/user/editUser/<%= users[i].id %>"><i class="fa-solid fa-gear"></i></a>
+                                <form action="/user/destroyUserAdmin/<%= users[i].id %>" method="post">
                                 <label for="delete"><i class="fa-solid fa-trash"></i></label>
                                 <input type="submit" value="" id="delete">
                                 </form>
