@@ -10,7 +10,9 @@
             <ul class="menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/products">Productos</a></li>
-                <li><a href="/user/listUsers">Lista De Usuarios</a></li>
+                <% if (locals.admin) { %>
+                    <li><a href="/user/listUsers">Lista De Usuarios</a></li>
+                <% } %>
                 <li><a href="/">Contacto</a></li>
                 <li><a href="/products/carrito">Carrito</a></li>
             </ul>

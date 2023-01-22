@@ -21,12 +21,14 @@
                 </form>
             </div>
                 <!-- Finish Busqueda -->
-                <h4 class="titlelib">Todos nuestros Libros!</h4>
-                <div class="agregarProd">
-                    <form action="/products/crearProducto" method="get">
-                        <input type="submit" value="Agregar Producto">
-                    </form>
-                </div>
+                <h4 class="titlelib">Todos nuestros Libros!</h4>    
+                <% if (locals.admin) { %>
+                    <div class="agregarProd">
+                        <form action="/products/crearProducto" method="get">
+                            <input type="submit" value="Agregar Producto">
+                        </form>
+                    </div>
+                <% } %>
         <section class="catalog">
             <% for(let i = 0; i < books.length ; i++) {%> 
             <article>

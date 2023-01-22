@@ -9,7 +9,7 @@ const session = require('express-session');
 const loggedViewMiddle = require('./middlewares/loggedViewMIddle')
 const cookies = require('cookie-parser');
 const db = require('./database/models');
-
+const adminMiddle = require('./middlewares/adminMiddle');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -21,7 +21,7 @@ app.use(session({
 }))
 app.use(cookies());
 app.use(loggedViewMiddle);  //Va despues del session, es para visualizar cosas logeado o otras sin loggear.
-
+app.use(adminMiddle);
 
 
 const publicPath = path.join(__dirname, '../public');

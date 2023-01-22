@@ -7,6 +7,7 @@ const path = require('path');
 
 const invitadoMiddle = require('../middlewares/invitadoMiddle')
 const authMiddle = require('../middlewares/authMiddle')
+const adminMiddle = require('../middlewares/adminMiddle');
 
 const mainController = require("../controllers/mainController")
 

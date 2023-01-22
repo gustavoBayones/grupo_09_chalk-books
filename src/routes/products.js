@@ -17,6 +17,7 @@ const storage = multer.diskStorage({
     }
 })
 
+const adminMiddle = require('../middlewares/adminMiddle')
 
 const upload = multer( { storage });
 

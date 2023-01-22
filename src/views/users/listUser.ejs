@@ -9,40 +9,51 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <div class="maindiv">
-            <div class="logo-tit">
-                <div>
-                <img src="/images/chalkLogo.png" alt="">
+            <% if (locals.admin) { %>
+                <div class="logo-tit">
+                    <div>
+                    <img src="/images/chalkLogo.png" alt="">
+                    </div>
+                    <h1>Lista de Usuarios</h1>
                 </div>
-                <h1>Lista de Usuarios</h1>
-            </div>
-            <div class="lista-user">
-                <ul>
-                    <% for(let i = 0; i < users.length ; i++) {%> 
-                    <li>
-                        <img src="/images/avatar/<%= users[i].avatar %>" alt="">
-                        <p class="email"><%= users[i].email %></p>
-                        <p class="nombre"><%= users[i].nombre%> <%= users[i].apellido %></p>
-                        <p class="rol"><%= users[i].rol_user.name%></p>
-                        <div class="icons">
-                            <form action="/user/editpassAdmin" method="get">
-                            <label for="password"><i class="fa-solid fa-key"></i></label>
-                            <input type="submit" value="" id="password">
-                            </form>
-                            <form action="/user/editUserAdmin" method="get">
-                                <label for="edit"><i class="fa-solid fa-gear"></i></label>
-                                <input type="submit" value="" id="edit">
-                            </form>
-                            <form action="/user/destroyUserAdmin" method="post">
-                            <label for="delete"><i class="fa-solid fa-trash"></i></label>
-                            <input type="submit" value="" id="delete">
-                            </form>
+                <div class="lista-user">
+                    <ul>
+                        <% for(let i = 0; i < users.length ; i++) {%> 
+                        <li>
+                            <img src="/images/avatar/<%= users[i].avatar %>" alt="">
+                            <p class="email"><%= users[i].email %></p>
+                            <p class="nombre"><%= users[i].nombre%> <%= users[i].apellido %></p>
+                            <p class="rol"><%= users[i].rol_user.name%></p>
+                            <div class="icons">
+                                <form action="/user/editpassAdmin" method="get">
+                                <label for="password"><i class="fa-solid fa-key"></i></label>
+                                <input type="submit" value="" id="password">
+                                </form>
+                                <form action="/user/editUserAdmin" method="get">
+                                    <label for="edit"><i class="fa-solid fa-gear"></i></label>
+                                    <input type="submit" value="" id="edit">
+                                </form>
+                                <form action="/user/destroyUserAdmin" method="post">
+                                <label for="delete"><i class="fa-solid fa-trash"></i></label>
+                                <input type="submit" value="" id="delete">
+                                </form>
+                            </div>
+                        </li>
+                        <% } %> 
+                    </ul>
+                </div>
+                <% } else { %>
+                    <div class="logo-tit">
+                        <div>
+                        <img src="/images/chalkLogo.png" alt="">
                         </div>
-                    </li>
+                        <h1>Ups...</h1>
+                    </div>
                     <% } %> 
-                </ul>
             </div>
-        </div>
-    </main>
+        </main>
+             
+            
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
