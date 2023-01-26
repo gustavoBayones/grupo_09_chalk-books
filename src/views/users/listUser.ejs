@@ -18,22 +18,19 @@
                 </div>
                 <div class="lista-user">
                     <ul>
-                        <% for(let i = 0; i < users.length ; i++) {%> 
+                        <% users.map(user => { %> 
                         <li>
-                            <img src="/images/avatar/<%= users[i].avatar %>" alt="">
-                            <p class="email"><%= users[i].email %></p>
-                            <p class="nombre"><%= users[i].nombre%> <%= users[i].apellido %></p>
-                            <p class="rol"><%= users[i].rol_user.name%></p>
+                            <img src="/images/avatar/<%= user.avatar %>" alt="">
+                            <p class="email"><%= user.email %></p>
+                            <p class="nombre"><%= user.nombre%> <%= user.apellido %></p>
+                            <p class="rol"><%= user.rol_user.name%></p>
                             <div class="icons">
-                                    <a href="/user/editPassword/<%= users[i].id %>"><i class="fa-solid fa-key"></i></a>
-                                    <a href="/user/editUser/<%= users[i].id %>"><i class="fa-solid fa-gear"></i></a>
-                                <form action="/user/destroyUserAdmin/<%= users[i].id %>" method="post">
-                                <label for="delete"><i class="fa-solid fa-trash"></i></label>
-                                <input type="submit" value="" id="delete">
-                                </form>
+                                    <a href="/user/editContraAdmin/<%= user.id %>"><i class="fa-solid fa-key"></i></a>
+                                    <a href="/user/editUser/<%= user.id %>"><i class="fa-solid fa-gear"></i></a>
+                                    <a href="/user/confirmDelete/<%= user.id %>"><i class="fa-solid fa-trash"></i></a>
                             </div>
                         </li>
-                        <% } %> 
+                        <% }) %> 
                     </ul>
                 </div>
                 <% } else { %>

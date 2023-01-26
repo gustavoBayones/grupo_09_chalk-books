@@ -12,6 +12,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 70vh;
 }
 .logo-titulo {
     display: flex;
@@ -51,7 +52,10 @@ h1 {
     padding: 15px;
     text-align: center;
 }
-
+form {
+    display: flex;
+    flex-direction: column;
+}
 .buttom {
     min-width: 130px;
     height: 40px;
@@ -76,7 +80,10 @@ h1 {
     box-shadow: 0 0 #adb5bd;
     top: 5px;
   }
-
+  .remember{
+    margin-top: 10px;
+    font-family: 'MV Boli', 'sans-serif';
+  }
   .help {
     display: flex;
     flex-direction: column;

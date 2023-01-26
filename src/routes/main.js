@@ -22,13 +22,10 @@ const validations = [
     body('avatar').custom((value, {req}) =>{
         let file = req.file;
         if(file){
-            console.log(path.extname(file.originalname))
-            if((path.extname(file.originalname) != '.jpg') || (path.extname(file.originalname) != '.png') || (path.extname(file.originalname) != '.jpeg')){
-                throw new Error('Las extensiones aceptadas son .jpg y .png');
+            console.log(file.mimetype)
+         if((file.mimetype != 'image/png' )|| (file.mimetype != 'image/jpg') || (file.mimetype != 'image/jpeg')){
+            //throw new Error('Las extensiones aceptadas son .jpg y .png');
             }
-        // if(((file.mimetype != 'image/png' )|| (file.mimetype != 'image/jpg') || (file.mimetype != 'image/jpeg'))){
-            
-        // }}
         }
         return true;    //REVISAR 
 
@@ -86,10 +83,14 @@ router.get("/user/logout", userController.logout)
 
 router.get("/user/editUser/:id", authMiddle, userController.editUser)
 
-router.post("/user/editUser/:id", authMiddle, userController.editUserSave)
+router.post("/user/editUser/:id", upload.single('avatar'), authMiddle, userController.editUserSave)
+
+router.get("/user/confirmDelete/:id" , authMiddle, userController.confirmDelete)
 
 router.post("/user/destroyUserAdmin/:id", authMiddle, userController.deleteUser)
 
+router.get("/user/editContraAdmin/:id", authMiddle, userController.editContraAdmin)
 
+router.post("/user/editContraAdmin/:id", authMiddle, userController.confirmEditContraAdmin)
 
 module.exports = router;

@@ -10,6 +10,7 @@ body {
 main{
     margin-top: 60px;
     padding: 20px 0px 80px 0px;
+    height: 70vh;
 }
 
 .present {
@@ -90,7 +91,10 @@ main{
     font-family: 'MV Boli' , 'sans-serif';
     margin:0;
 }
-
+form {
+    display: flex;
+    flex-direction: column;
+}
 .legals {
     display:flex;
     align-items: center;

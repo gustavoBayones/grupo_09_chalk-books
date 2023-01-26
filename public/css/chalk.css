@@ -67,10 +67,14 @@ body {
     transform: rotateY(180deg);
 }
 .flip-card-back img {
-    
     width: 140px;
     margin-top: 1rem;
 }
+.flip-card-back p{
+    font-size: 13px;
+    font-family: 'Inter';
+}
+
 .flip-card-back h3 {
     margin-bottom: 0.3rem;
 }
@@ -155,7 +159,6 @@ section{
         margin-left: 45px;
     }
     
-
     #ccard.flip-card {
         display: none;
     }
