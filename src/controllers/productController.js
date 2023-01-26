@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require("../database/models")
+const { validationResult } = require('express-validator');
 let productController = {
 
     index: function (req, res) {
@@ -21,6 +22,14 @@ let productController = {
     },
 
     crearProducto: function (req, res) {
+        const resultValidation = validationResult(req)
+        console.log(resultValidation)
+        if (resultValidation.errors.length > 0) {
+            return res.render('products/crear-producto', {
+                errors: resultValidation.mapped(),
+                data: req.body
+            })
+        }
         let promiseGenres = db.genres.findAll()
         let promiseAutors = db.autors.findAll()
         Promise.all([promiseGenres, promiseAutors])

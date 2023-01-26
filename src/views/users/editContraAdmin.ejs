@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/editContra.css">
+    <script src="/scripts/contraseña.js"></script>
 
 </head>
 
@@ -27,6 +28,8 @@
                     <button href="/">Cancelar</button>
                 </form>
             </div>
+            <p class="error">Las contraseñas deben ser iguales!</p>
+            <p class="lenght">Debe tener mas de 8 caracteres!</p>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>

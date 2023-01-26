@@ -4,7 +4,7 @@
 <head>
         <link rel="stylesheet" href="/css/register.css">
         <%- include('../partials/head.ejs') %>
-
+        <script src="/scripts/register.js"></script>
 </head>
 
 <body>
@@ -17,17 +17,19 @@
                 </h4>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
+                <p class="image">Solo se permiten 'png' , 'jpg' , 'jpeg'(No es obligatorio el avatar!)</p>
+                <p class="imagentitle"></p>
                 <div class="fileUp">
                     <label class="fileLab" for="fileUp">
                         Subi tu avatar!
                         <i class="fa-solid fa-camera"></i>
                         <input type="file" name="avatar" id="fileUp">
                     </label>
-                    <% if (locals.errors && errors.avatar) { %>
+                    <!-- <% if (locals.errors && errors.avatar) { %>
                         <div class="error">
                         <p><%= errors.avatar.msg %> </p>
                         </div>
-                    <% } %>
+                    <% } %> -->
                     <div class="fullname">
                         <label for="" class="name">
                             <p>Nombre</p>
@@ -76,8 +78,9 @@
                 <div class="iText">
                     <label for="copassword">
                         <p>Confirmar contraseña</p>
-                        <input type="password" name="copassword" id="copassword">
+                        <input type="password" name="copassword" id="coPass">
                     </label>
+                    <p class="error">Las contraseñas deben coincidir!</p>
                 </div>
                 <div class="legals">
                     <label for="">

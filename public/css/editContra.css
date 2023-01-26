@@ -35,7 +35,14 @@ form {
     margin:15px;
     max-width: 400px;
 }
+p.error, p.lenght{
+     color:red;
+     font-family: 'MV Boli' , 'sans-serif';
+     margin:0;
+     text-align: center;
+     display: none;
 
+}
 .newP {
     display: flex;
     flex-direction: column;

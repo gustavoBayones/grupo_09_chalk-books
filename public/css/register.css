@@ -91,6 +91,18 @@ main{
     font-family: 'MV Boli' , 'sans-serif';
     margin:0;
 }
+p.imagentitle {
+    text-align: center;
+    font-family: 'MV Boli' , 'sans-serif';
+}
+
+p.image, p.error { 
+    color: red;
+    text-align: center;
+    font-family: 'MV Boli' , 'sans-serif';
+    display: none;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -140,6 +152,9 @@ form {
 
 
 @media (min-width: 700px) {
+    main {
+        height: 90vh;
+    }
     .fileUp{
         display: block;
     }
@@ -165,14 +180,20 @@ form {
         max-width: 700px;
         margin:auto;
     }
+    .botones input {
+        margin: 0 10px 0 10px;
+    }
     footer{
         margin-top: 20px;
     }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 900px){
     main {
-        height: 100vh;
+        height: 90vh;
+    }
+    .botones input {
+        margin: 0 10px 0 10px;
     }
 }
 

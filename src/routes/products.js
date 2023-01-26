@@ -6,6 +6,12 @@ const multer = require('multer');
 
 const path = require('path');
 
+const { body }= require('express-validator')
+const validations = [
+    body('autors').notEmpty().withMessage('Debes seleccionar un Autor'),
+    body('nombreProducto').notEmpty().withMessage('Debes escribir un titulo'),
+]
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb){
         cb(null, path.join(__dirname, '../../public/images/portadas'));
@@ -29,7 +35,7 @@ router.get ("/carrito", productController.carrito)
 router.get ("/detalleProducto/:id", productController.detalleProducto)
 
 router.get ("/crearProducto", productController.crearProducto)
-router.post ("/crearProducto", upload.single('portada'), productController.guardarProducto)
+router.post ("/crearProducto", upload.single('portada'),validations, productController.guardarProducto)
 
 router.get ("/detalleProducto/:id/edit", productController.formEditarProducto)
 router.put ("/detalleProducto/:id/edit", upload.single('portada'), productController.editarProducto)

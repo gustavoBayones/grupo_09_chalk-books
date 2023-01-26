@@ -18,7 +18,7 @@ const validations = [
     body('nombre').notEmpty().withMessage('Debes escribir un nombre'),     // CAMPOS DEL REGISTRO nombre, apellido , email , password, copassword, terms
     body('apellido').notEmpty().withMessage('Debes escribir un apellido'), //Validaciones de express-validator
     body('email').isEmail().withMessage('Tienes que ingresar un Email correcto'), 
-    body('password').isLength({min: 4}).withMessage('El largo debe ser mas de 4 caracteres'),
+    body('password').isLength({min: 8}).withMessage('El largo debe ser mas de 8 caracteres'),
     body('avatar').custom((value, {req}) =>{
         let file = req.file;
         if(file){
@@ -71,7 +71,7 @@ router.get ("/user/profile/",authMiddle, userController.profile)
 
 router.get ("/user/profile/:id/editProfile",authMiddle, userController.editProfile)
 
-router.post("/user/profile/:id/editProfile",upload.single('avatar'), userController.guardarEditProfile)
+router.post("/user/profile/:id/editProfile",upload.single('avatar'),validations, userController.guardarEditProfile) //pendiente...
 
 router.get("/user/profile/:id/editContra",authMiddle, userController.editContra)
 
@@ -83,7 +83,7 @@ router.get("/user/logout", userController.logout)
 
 router.get("/user/editUser/:id", authMiddle, userController.editUser)
 
-router.post("/user/editUser/:id", upload.single('avatar'), authMiddle, userController.editUserSave)
+router.post("/user/editUser/:id", upload.single('avatar'),validations, authMiddle, userController.editUserSave) //no funcionan las validaciones por backend aca ? RARO
 
 router.get("/user/confirmDelete/:id" , authMiddle, userController.confirmDelete)
 
