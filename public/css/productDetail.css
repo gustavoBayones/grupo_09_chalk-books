@@ -10,6 +10,9 @@ body {
 main{
     background-color: #f3f6f4;
 }
+.maindiv {
+    height: 80vh;
+}
 .portada {
     display:flex;
     justify-content: center;
@@ -17,6 +20,7 @@ main{
 .portada img {
     height: 200px;
     margin: 30px;
+    max-height: 200px;
 }
 h1 {
     text-align: center;
@@ -36,10 +40,10 @@ h1 {
 .info{
     display: flex;
     font-family: 'Inter';
-    justify-content: space-between;
+    flex-direction: column;
 }
 .info p{
-    margin:0;
+    margin:10px;
     font-size: 12px;
 }
 .descripcion{
@@ -118,6 +122,8 @@ section article img {
     }
     .portada img {
         height: 300px;
+        max-height: 300px;
+        max-width: 300px;
     }
     section {
         justify-content: center;

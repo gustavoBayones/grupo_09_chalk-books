@@ -10,6 +10,7 @@ body {
 }
 .maindiv {
     margin: 15px;
+    height: 90vh;
 }
 h1{
     font-family: 'MV Boli', 'sans-serif';
@@ -22,6 +23,7 @@ h1{
 .campo {
     display: flex;
     margin: 10px 0;
+    flex-direction: column;
 }
 .campo label{
     width: 46%;
@@ -88,7 +90,26 @@ h1{
     border-radius: 5px;
     margin: 10px;
 }
+.error p {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(163, 6, 6, 0.644)
+}
 
+p.image { 
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(163, 6, 6, 0.644)
+}
+
+.portadaActual h4 {
+    font-family: 'Inter';
+}
+.portadaActual img {
+    max-width: 300px;
+    max-height: 300px;
+}
 @media (min-width: 900px){
     .maindiv{
         margin: 0 25vw 0px 25vw;

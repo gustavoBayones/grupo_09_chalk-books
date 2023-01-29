@@ -28,10 +28,8 @@ let userController = {
             .then(function (user) {
                 if (user) {
                     var userToLogin = user.dataValues
-                    console.log(userToLogin)
                 }
                 else {
-                    console.log('Fallé')
                     return res.render('users/login', {
                         errors: {
                             email: {
@@ -83,7 +81,6 @@ let userController = {
             }
         })
             .then(function (userInDB) {
-                console.log(userInDB)
                 if (userInDB) {
                     if (req.body.email == userInDB.email) {
                         return res.render('users/registro', {
@@ -157,7 +154,6 @@ let userController = {
 
         db.user.findByPk(req.session.userLogged.id)
             .then(function (users) {
-                console.log(users)
                 res.render('users/profile', { user: users })
             })
 
@@ -189,8 +185,6 @@ let userController = {
         // let userJSON = JSON.stringify(listUsers)
         // fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
         // res.redirect("/")
-        console.log(req.session)
-        console.log(req.body.nombre)
 
         if (req.file) {
             db.user.update({
@@ -230,7 +224,6 @@ let userController = {
     },
 
     guardarEditContra: function (req, res) {
-        console.log(req.body.password)
         db.user.update({
             password: bcryptjs.hashSync(req.body.password, 10)
         }, {
@@ -256,11 +249,9 @@ let userController = {
     },
     editUser: function (req, res) {
         let editUser = ""
-        console.log('Me ejecute')
         db.user.findByPk(req.params.id)
             .then(function (user) {
                 editUser = user
-                console.log(req.params.id)
                 res.render('users/editAdminUser', { user: user })
             }) //SE EJECUTA DOS VECES LA QUERY LA SEGUNDA OCN UN PARAMETRO CUALQUIERA
 
@@ -301,7 +292,6 @@ let userController = {
         db.user.findByPk(req.params.id)
             .then(function (user) {
                 editUser = user
-                console.log(req.params.id)
                 res.render('users/confirmDelete', { user: user })
             })
 
