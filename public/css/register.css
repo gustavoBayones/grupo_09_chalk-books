@@ -88,18 +88,18 @@ main{
 }
 .error p {
     color:red;
-    font-family: 'MV Boli' , 'sans-serif';
+    font-family: 'Inter';
     margin:0;
 }
 p.imagentitle {
     text-align: center;
-    font-family: 'MV Boli' , 'sans-serif';
+    font-family: 'Inter';
 }
 
 p.image, p.error { 
     color: red;
     text-align: center;
-    font-family: 'MV Boli' , 'sans-serif';
+    font-family: 'Inter';
     display: none;
 }
 
