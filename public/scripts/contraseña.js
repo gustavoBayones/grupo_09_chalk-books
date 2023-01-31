@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
     form.addEventListener('submit', function (e) {
         parrafoError.style.display = 'none'
         parrafoLenght.style.display = 'none'
-        if (contraseña.value === ConfirmContraseña.value) {
+        if (contraseña.value === ConfirmContraseña.value && contraseña.value != '') {
             
 
         } else {

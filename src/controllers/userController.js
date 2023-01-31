@@ -40,7 +40,8 @@ let userController = {
                 }
 
                 if (userToLogin) {
-                    let passwordCompare = bcryptjs.compareSync(req.body.password, userToLogin.password); //lautaro
+                    let passwordCompare = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                    console.log(passwordCompare)
                     if (passwordCompare) {
                         delete userToLogin.password
                         req.session.userLogged = userToLogin
@@ -167,6 +168,7 @@ let userController = {
             })
     },
     guardarEditProfile: function (req, res) {
+
         // let id = req.session.userLogged.id
         // let newListUsers = fs.readFileSync(path.join(__dirname, '../data/users.json'), {encoding: 'utf-8'});
         // let listUsers = JSON.parse(newListUsers)
@@ -186,6 +188,16 @@ let userController = {
         // fs.writeFileSync(path.join(__dirname, '../data/users.json') , JSON.stringify(listUsers, null, ' '));
         // res.redirect("/")
 
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            db.user.findByPk(req.session.userLogged.id)
+            .then(function (response) {
+                res.render('users/editProfile', { 
+                    user: response,
+                    errors: resultValidation.mapped(),
+                    data: req.body })
+            })
+        } else {
         if (req.file) {
             db.user.update({
                 nombre: req.body.nombre,
@@ -215,6 +227,7 @@ let userController = {
                     res.redirect("/user/profile")
                 })
         }
+    }
     },
 
     editContra: function (req, res) {
@@ -249,6 +262,7 @@ let userController = {
     },
     editUser: function (req, res) {
         let editUser = ""
+        
         db.user.findByPk(req.params.id)
             .then(function (user) {
                 editUser = user
@@ -257,6 +271,18 @@ let userController = {
 
     },
     editUserSave: function (req, res) {
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            let editUser = ""
+            db.user.findByPk(req.params.id)
+                .then(function (user) {
+                    editUser = user
+                    res.render('users/editAdminUser', { 
+                        user: user,
+                        errors: resultValidation.mapped(),
+                        data: req.body })
+            })
+        } else {
         if (req.file) {
             db.user.update({
                 nombre: req.body.nombre,
@@ -287,6 +313,7 @@ let userController = {
                     res.redirect("/user/listUsers")
                 })
         }
+    }
     },
     confirmDelete: function (req, res) {
         db.user.findByPk(req.params.id)

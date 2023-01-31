@@ -5,7 +5,6 @@
 
     <link rel="stylesheet" href="/css/register.css">
     <%- include('../partials/head.ejs') %>
-    <script src="/scripts/register.js"></script>
 </head>
 
 <body>
@@ -13,7 +12,7 @@
     <main>
         <% if (locals.admin) { %>
         <div class="present">
-            <img src="./chalkLogo.png" alt="">
+            <img src="/images/chalkLogo.png" alt="">
             <h4>
                 EDITAR USUARIO!
             </h4>
@@ -21,6 +20,9 @@
         <form class="formulario" action="/user/editUser/<%= user.id %>" method="POST" enctype="multipart/form-data">
             <p class="image">Solo se permiten 'png' , 'jpg' , 'jpeg'(No es obligatorio el avatar!)</p>
             <p class="imagentitle"></p>
+            <div class="imagenPerfil">
+                <img src="/images/avatar/<%= user.avatar %>" alt="" srcset="">
+            </div>
             <div class="fileUp">
                 <label class="fileLab" for="fileUp">
                     Subi tu avatar!

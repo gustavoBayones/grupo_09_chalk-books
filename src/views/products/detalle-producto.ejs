@@ -29,13 +29,13 @@
                     <p class="descripcion"><%=  product.description %></p>
                 </div>
                 <div class="cantidad">
-                    <form action="" method="post">
+                    <form action="/products/carrito" method="get">
                         <label class="stock" for="">
                             <p>Cantidad</p>
                             <input class="inputNumber" type="number">
                         </label>
                         <div class="containerBoton">
-                            <input class="boton" type="button" value="Agregar al carrito">
+                            <input class="boton" type="submit" value="Agregar al carrito">
                         </div>
                     </form>
                 </div>

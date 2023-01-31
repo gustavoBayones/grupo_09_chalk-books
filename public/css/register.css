@@ -52,6 +52,16 @@ main{
 .fileUp i{
     color: black;
 }
+.imagenPerfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.imagenPerfil img {
+    max-width: 200px;
+    border-radius: 15px;
+}
 .name{
     font-family: 'MV Boli', sans-serif;
 }
