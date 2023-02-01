@@ -2,6 +2,7 @@ const express = require('express');
 const mainRoutes = require("./routes/main")
 const productsRoutes = require("./routes/products")
 const userRoutes = require("./routes/user")
+const apiRoutes = require("./routes/api")
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
@@ -35,6 +36,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/', mainRoutes);
 
 app.use('/products', productsRoutes);
+
+app.use('/api', apiRoutes)
  // app.use('/users', require("./routes/user")); Crashea y no entiendo porque, asique lo dejo en el / y lo manejo desde mainRoutes
 
  app.listen(3030, ()=>{
