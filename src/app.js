@@ -23,12 +23,18 @@ app.use(session({
 app.use(cookies());
 app.use(loggedViewMiddle);  //Va despues del session, es para visualizar cosas logeado o otras sin loggear.
 app.use(adminMiddle);
+const cors = require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 const publicPath = path.join(__dirname, '../public');
 
 app.use( express.static (publicPath) );
-
 app.set('view engine', 'ejs');
 
 app.set('views', path.join(__dirname, 'views'));

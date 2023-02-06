@@ -20,7 +20,7 @@ let apiController = {
                 })
             })
     },
-    listGenres: function (req, res) {   //localhost:3030/api/genres
+    listGenres: function (req, res) {   //localhost:3030/api/listGenres
         db.genres.findAll({include: [{ association: "books_genre" }]})
             .then(function (genres) {
                 var data = []
@@ -49,6 +49,8 @@ let apiController = {
             .then(function (autors) {
                 var countBooksByAutor = []
                 var data = []
+                var booksByAutor = []
+                var index = null;
                 for(let i = 0; i < autors.length; i++){
                     data[i] = {
                         id: autors[i].id,
@@ -56,13 +58,33 @@ let apiController = {
                     }
                     countBooksByAutor[i] = {
                         Autor: autors[i].name,
-                        Cantidad: autors[i].books_autor.length
+                        Cantidad: autors[i].books_autor
+                    }
+                }
+                for(let i = 0; i < countBooksByAutor.length; i++) {
+                    for(let j = 0; j < countBooksByAutor[i].Cantidad.length; j++){
+                        // console.log(countBooksByAutor[i].Autor, countBooksByAutor[i].Cantidad.length ,countBooksByAutor[i].Cantidad[j].title)
+                        
+                        booksByAutor[i] = {
+                            Autor: countBooksByAutor[i].Autor,
+                            Libros: countBooksByAutor[i].Cantidad.map((book)=> book.title)
+                        }
+                    }
+                }
+                for(let i = 0; i < booksByAutor.length; i++) {
+                    if(i != 0){
+                    if(booksByAutor[i].Libros.length > booksByAutor[i-1].Libros.length){
+                        index = i;
+                    }} else {
+                        index = 0;
                     }
                 }
                 res.json(200, {
                     total: autors.length,
                     data: data,
                     count: countBooksByAutor,
+                    booksByAutor: booksByAutor,
+                    autorsWithMoreBooks: booksByAutor[index],
                     status: 200
                 })
             })
@@ -151,7 +173,20 @@ let apiController = {
                 data: user
             })
         })
-    }
+    },
+    countAll: function(req,res){//localhost:3030/api/countAll
+        let promiseBooks = db.books.findAll()
+        let promiseGenres = db.genres.findAll()
+        let promiseAutors = db.autors.findAll()
+        Promise.all([promiseGenres, promiseAutors, promiseBooks])
+            .then(function([genres,autors,books]){
+                res.status(200).json({
+                    countGenres: genres.length,
+                    countAutors: autors.length,
+                    countBooks: books.length
+                })
+            })
+    }      
 }
 
 module.exports = apiController

@@ -13,7 +13,7 @@ router.get('/books/search', apiController.searchBook)
 //Ultimos 5 libros
 router.get('/books/lastFive', apiController.last5Books)
 //Lista de generos
-router.get('/genres', apiController.listGenres)
+router.get('/listGenres', apiController.listGenres)
 
 //Lista de autores
 router.get('/autors', apiController.listAutores)
@@ -22,4 +22,6 @@ router.get('/autors', apiController.listAutores)
 router.get('/users', apiController.listUsers)
 //Ultimo Usuario
 router.get('/users/lastUser', apiController.lastUser)
+//Contador 
+router.get('/countAll', apiController.countAll)
 module.exports = router;
