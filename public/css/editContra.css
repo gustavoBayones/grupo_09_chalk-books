@@ -18,6 +18,8 @@ h1 {
 }
 form {
     font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
 }
 input[type="password"] {
     font-family: 'Inter';
@@ -30,6 +32,8 @@ input[type="submit"] , button {
     box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
     background-color: white;
     border-radius: 5px;
+    width: fit-content;
+    align-self: center;
 }
 form {
     margin:15px;
@@ -54,7 +58,17 @@ p.error, p.lenght{
 .formdiv{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
+button {
+    align-self: center;
+}
+
+a{
+    display: flex;
+    text-decoration: none;
 }
 @media(min-width:700px){
     main{
