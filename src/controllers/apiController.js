@@ -108,10 +108,13 @@ let apiController = {
             })
     },
     searchBook: function (req, res) {   //localhost:3030/api/books/search?title=
-        db.books.findAll({include: [{ association: "genres_book" }, { association: "autors_book" }]},{
+        db.books.findAll({
             where: { 
                 title : {[Op.like]: '%' + req.query.title + '%'}
             }
+        }, 
+        {
+            include: [{ association: "genres_book" }, { association: "autors_book" }]
         })
             .then(function (book) {
                 if(book.length > 0) {
@@ -119,12 +122,14 @@ let apiController = {
                     book[i].dataValues.detail = 'localhost:3030/products/detalleProducto/' + book[i].id
                     book[i].dataValues.urlImage = 'http://localhost:3030/images/portadas/' + book[i].dataValues.portada
                 }
-                console.log(book)
                 res.json(200, {
                     total: book.length,
                     book: book
-                })} else {
-                    res.json(400, {error: 'No existen libros con ese titulo'})
+                })}
+                else {
+                    res.json(200, {
+                        book: [{title: 'No se encontraron libros'}]
+                    })
                 }
             })
     },
