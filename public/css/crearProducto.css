@@ -10,7 +10,7 @@ body {
 }
 .maindiv {
     margin: 15px;
-    height: 90vh;
+    height: 1200px;
 }
 h1{
     font-family: 'MV Boli', 'sans-serif';
@@ -120,6 +120,6 @@ p.image {
         -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
         padding: 15px;
         padding-bottom: 100px;
-        height: 1000px;
+        height: 1200px;
     }
 }

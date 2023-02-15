@@ -192,6 +192,7 @@ let userController = {
         if (resultValidation.errors.length > 0) {
             db.user.findByPk(req.session.userLogged.id)
             .then(function (response) {
+                console.log(req.body , resultValidation.errors)
                 res.render('users/editProfile', { 
                     user: response,
                     errors: resultValidation.mapped(),

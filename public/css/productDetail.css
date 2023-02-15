@@ -11,7 +11,7 @@ main{
     background-color: #f3f6f4;
 }
 .maindiv {
-    height: 1000px;
+    height: 1200px;
 }
 .portada {
     display:flex;
@@ -144,7 +144,7 @@ section article img {
         -webkit-box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
         -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
         padding-bottom: 15px;
-        height: 1000px;
+        height: 1200px;
     }
     .container{
         flex-wrap: wrap;

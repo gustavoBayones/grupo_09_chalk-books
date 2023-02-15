@@ -163,7 +163,7 @@ form {
 
 @media (min-width: 700px) {
     main {
-        height: 1000px;
+        height: 1200px;
     }
     .fileUp{
         display: block;
@@ -200,7 +200,7 @@ form {
 
 @media (min-width: 900px){
     main {
-        height: 1000px;
+        height: 1200px;
     }
     .botones input {
         margin: 0 10px 0 10px;

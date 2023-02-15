@@ -92,4 +92,7 @@ label {
     p{
         text-align: center;
     }
+    .maindiv {
+        min-height: 1000px;
+    }
 }

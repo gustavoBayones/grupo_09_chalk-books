@@ -71,7 +71,7 @@ router.get ("/user/profile/",authMiddle, userController.profile)
 
 router.get ("/user/profile/:id/editProfile",authMiddle, userController.editProfile)
 
-router.post("/user/profile/:id/editProfile",upload.single('avatar'),validations, userController.guardarEditProfile) //pendiente...
+router.post("/user/profile/:id/editProfile",upload.single('avatar'), userController.guardarEditProfile) //pendiente...
 
 router.get("/user/profile/:id/editContra",authMiddle, userController.editContra)
 
@@ -83,7 +83,7 @@ router.get("/user/logout", userController.logout)
 
 router.get("/user/editUser/:id", authMiddle, userController.editUser)
 
-router.post("/user/editUser/:id", upload.single('avatar'),validations, authMiddle, userController.editUserSave) //no funcionan las validaciones por backend aca ? RARO
+router.post("/user/editUser/:id", upload.single('avatar'), authMiddle, userController.editUserSave) //no funcionan las validaciones por backend aca ? RARO
 
 router.get("/user/confirmDelete/:id" , authMiddle, userController.confirmDelete)
 
